@@ -4,25 +4,69 @@
 
 // Declaramos las variables iniciales
 
-let nombre = prompt("¿Cuál es su nombre?");
+const nombre = prompt("¿Cuál es su nombre?");
 let email = prompt("Ingrese su correo electrónico");
-let anio = parseInt(prompt("¿En qué año nació?"));
-let edad = 2022 - anio;
+function anio(){parseInt(prompt("¿En qué año nació?"));}
+let fecha = new Date();
+let anioActual = fecha.getFullYear();
+function edad(){anioActual - anio;}
 
 // Utilizamos un do while para checkear si el usuario es menor de edad
 
-do {
-if (edad >= 18) {
-   
+while (edad >= 18) {
     alert(`Usted tiene ${edad} años, Le damos la bienvenida a TimbaLandia ${nombre}`);
     document.write(`Usted tiene ${edad} años, le damos la bienvenida a TimbaLandia ${nombre} <br/>`)
-} else {
-
-    // alert("Los menores de edad no pueden jugar, acceso bloqueado");
+  }
+  
+do {
+    anio();
+    alert("Los menores de edad no pueden jugar, acceso bloqueado");
     document.write(`Usted tiene ${edad} años, los menores no pueden jugar en Timbalandia ${nombre} <br/>`);
     window.location.assign('menores.html');
-    }
-} while (edad < 18);   
+  }
+  while (edad < 18);
+
+
+// if (edad >= 18){
+//     alert(`Usted tiene ${edad} años, Le damos la bienvenida a TimbaLandia ${nombre}`);
+//     document.write(`Usted tiene ${edad} años, le damos la bienvenida a TimbaLandia ${nombre} <br/>`)
+// }
+// else{
+//     alert("Los menores de edad no pueden jugar, acceso bloqueado");
+//     document.write(`Usted tiene ${edad} años, los menores no pueden jugar en Timbalandia ${nombre} <br/>`);
+//     window.location.assign('menores.html');
+// }
+
+// while(anio == '' || anio == 'ok'){   
+//     anio = parseInt(prompt("¿En qué año nació?"));
+//     if($.isNumeric(anio) === false){
+//         continue;
+//     }
+//     if(edad >= 18 ){
+//         alert(`Usted tiene ${edad} años, Le damos la bienvenida a TimbaLandia ${nombre}`);
+//         document.write(`Usted tiene ${edad} años, le damos la bienvenida a TimbaLandia ${nombre} <br/>`)
+//         continue;
+//     }
+//     if (edad < 18){ 
+//         alert("Los menores de edad no pueden jugar, acceso bloqueado");
+//     document.write(`Usted tiene ${edad} años, los menores no pueden jugar en Timbalandia ${nombre} <br/>`);
+//     window.location.assign('menores.html'); 
+//     }
+//  }
+
+
+
+
+// if (edad >= 18) {
+   
+//     alert(`Usted tiene ${edad} años, Le damos la bienvenida a TimbaLandia ${nombre}`);
+//     document.write(`Usted tiene ${edad} años, le damos la bienvenida a TimbaLandia ${nombre} <br/>`)
+// } else {
+//     alert("Los menores de edad no pueden jugar, acceso bloqueado");
+//     document.write(`Usted tiene ${edad} años, los menores no pueden jugar en Timbalandia ${nombre} <br/>`);
+//     window.location.assign('menores.html');
+//     }
+
 
 // Espacio para publicidad y anuncios
 
