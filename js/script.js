@@ -4,68 +4,24 @@
 
 // Declaramos las variables iniciales
 
-const nombre = prompt("¿Cuál es su nombre?");
+let nombre = prompt("¿Cuál es su nombre?");
 let email = prompt("Ingrese su correo electrónico");
-function anio(){parseInt(prompt("¿En qué año nació?"));}
+let anio = parseInt(prompt("¿En qué año nació?"));
 let fecha = new Date();
 let anioActual = fecha.getFullYear();
-function edad(){anioActual - anio;}
+let edad = anioActual - anio;
 
-// Utilizamos un do while para checkear si el usuario es menor de edad
+while (edad < 18 || isNaN(edad) || isNaN(nombre) || isNaN(email) ){
 
-while (edad >= 18) {
-    alert(`Usted tiene ${edad} años, Le damos la bienvenida a TimbaLandia ${nombre}`);
-    document.write(`Usted tiene ${edad} años, le damos la bienvenida a TimbaLandia ${nombre} <br/>`)
-  }
-  
-do {
-    anio();
-    alert("Los menores de edad no pueden jugar, acceso bloqueado");
-    document.write(`Usted tiene ${edad} años, los menores no pueden jugar en Timbalandia ${nombre} <br/>`);
-    window.location.assign('menores.html');
-  }
-  while (edad < 18);
-
-
-// if (edad >= 18){
-//     alert(`Usted tiene ${edad} años, Le damos la bienvenida a TimbaLandia ${nombre}`);
-//     document.write(`Usted tiene ${edad} años, le damos la bienvenida a TimbaLandia ${nombre} <br/>`)
-// }
-// else{
-//     alert("Los menores de edad no pueden jugar, acceso bloqueado");
-//     document.write(`Usted tiene ${edad} años, los menores no pueden jugar en Timbalandia ${nombre} <br/>`);
-//     window.location.assign('menores.html');
-// }
-
-// while(anio == '' || anio == 'ok'){   
-//     anio = parseInt(prompt("¿En qué año nació?"));
-//     if($.isNumeric(anio) === false){
-//         continue;
-//     }
-//     if(edad >= 18 ){
-//         alert(`Usted tiene ${edad} años, Le damos la bienvenida a TimbaLandia ${nombre}`);
-//         document.write(`Usted tiene ${edad} años, le damos la bienvenida a TimbaLandia ${nombre} <br/>`)
-//         continue;
-//     }
-//     if (edad < 18){ 
-//         alert("Los menores de edad no pueden jugar, acceso bloqueado");
-//     document.write(`Usted tiene ${edad} años, los menores no pueden jugar en Timbalandia ${nombre} <br/>`);
-//     window.location.assign('menores.html'); 
-//     }
-//  }
+    document.write(`Usted es menor o no completó los datos, los menores no pueden jugar en Timbalandia <br/> <h3> ARTICULO 6. - A los efectos de la aplicación de las penas que establecen los artículos anteriores, todas las infracciones cometidas antes de la vigencia de la presente ley se computarán como una sola, cualquiera sea su número. <br/> En los casos previstos en el inc. 3 del art. 3, la circunstancia de que entre los apostadores se encuentre algún menor de 18 años, será considerada como circunstancia calificativa de agravación. </h3><br/> <h6>http://www.saij.gob.ar/legislacion/decreto_ley-nacional-6618-1957-prohibicion_juegos_azar.htm <br/> </h6> <img src="../assets/menores.jpg">`);
+    window.location.pathname('menores.html');
+    
+} 
 
 
 
-
-// if (edad >= 18) {
-   
-//     alert(`Usted tiene ${edad} años, Le damos la bienvenida a TimbaLandia ${nombre}`);
-//     document.write(`Usted tiene ${edad} años, le damos la bienvenida a TimbaLandia ${nombre} <br/>`)
-// } else {
-//     alert("Los menores de edad no pueden jugar, acceso bloqueado");
-//     document.write(`Usted tiene ${edad} años, los menores no pueden jugar en Timbalandia ${nombre} <br/>`);
-//     window.location.assign('menores.html');
-//     }
+alert(`Usted tiene ${edad} años, Le damos la bienvenida a TimbaLandia ${nombre}`);
+document.write(`Usted tiene ${edad} años, le damos la bienvenida a TimbaLandia ${nombre} <br/>`)
 
 
 // Espacio para publicidad y anuncios
