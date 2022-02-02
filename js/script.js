@@ -11,7 +11,7 @@ let fecha = new Date();
 let anioActual = fecha.getFullYear();
 let edad = anioActual - anio;
 
-// Condicional para detectar si el usuario es menor de edad
+// Condicional para detectar si el usuario es menor de edad 
 
 while (edad < 18 || isNaN(anio)){
 
