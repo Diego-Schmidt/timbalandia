@@ -88,22 +88,35 @@ let finalUala = resultado - porUala;
 let finalMercadoPago = resultado - porMercadoPago;
 let finalBruBank = resultado - porBruBank;
 
-// Creamos el díalogo para la selección de la forma de pago y damos la información del precio final
+// Generamos números de 4 dígitos al azar en un array y seleccionamos en base a la cantidad de tickets comprados
+
+  var elegidos = [];
+  while(elegidos.length < cantidadTickets){
+      var r = Math.floor(Math.random(9999 - 1000) * 100) + 1000;
+      if(elegidos.indexOf(r) === -1) elegidos.push(r);
+  }
+  console.log(elegidos);
+
+// convertimos el array elegidos en string para mostrarlo
+
+let susNumeros = elegidos.toString();
+
+// generamos el diálogo final
 
 let pago = prompt("¿Cómo vas a pagar? (1)Ualá, (2)MercadoPago o (3)Brubank")
 if(pago == "1"){
     alert("Tenes 10% de descuento con Ualá");
     alert(`El precio final con descuento sería ${finalUala} pesos argentinos`)
-    document.write(`Gracias por comprar ${cantidadTickets} tickets y pagar con Ualá, que tenga suerte ${nombre} y vuelva pronto :D`);
+    document.write(`Gracias por comprar ${cantidadTickets} tickets y pagar con Ualá, estos son sus números generados al azar ${susNumeros},  que tenga suerte ${nombre} y vuelva pronto :D`);
 } else if(pago == "2"){
     alert("Tenes 5% de descuento con MercadoPago");
     alert(`El precio final con descuento sería ${finalMercadoPago} pesos argentinos`)
-    document.write(`Gracias por comprar ${cantidadTickets} tickets y pagar con MercadoPago, que tenga suerte y vuelva pronto ${nombre} :D`);
+    document.write(`Gracias por comprar ${cantidadTickets} tickets y pagar con MercadoPago, estos son sus números generados al azar ${susNumeros}, que tenga suerte y vuelva pronto ${nombre} :D`);
 }
  else if (pago == "3"){
     alert("Con Brubank tenés un 20% de descuento");
     alert(`El precio final con descuento sería ${finalBruBank} pesos argentinos`)
-    document.write(`Gracias por comprar ${cantidadTickets} tickets y pagar con Brubank, que tenga suerte y vuelva pronto ${nombre} :D`);
+    document.write(`Gracias por comprar ${cantidadTickets} tickets y pagar con Brubank, estos son sus números generados al azar ${susNumeros}, que tenga suerte y vuelva pronto ${nombre} :D`);
 }
 
     if(resultado >= 1){
