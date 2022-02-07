@@ -11,29 +11,7 @@ let fecha = new Date();
 const anioActual = fecha.getFullYear();
 let edad = anioActual - anio;
 
-// agregamos un class con datos sobre sorteos pasados por
 
-class Sorteos {
-    constructor(sorteo) {
-      this.numero = sorteo.numero;
-      this.fecha = sorteo.fecha;
-      this.premio = sorteo.premio;
-      this.ganadores = sorteo.ganadores;
-      }
-  
-    printMessage() {
-      console.log(
-        `Sorteo n° ${this.numero}: de la fecha ${this.fecha}, con un premio de ${this.premio} tuvo ${this.director} ganadores `
-      )
-    }
-  }
-
-  const sorteo01022022 = {
-    numero: 222,
-    fecha: "01-02-2022",
-    premio: "3.000.000 ARS",
-    ganadores: "12"
-  };
   
 // While para detectar si el usuario es menor de edad 
 
@@ -53,18 +31,49 @@ document.write(`Usted tiene ${edad} años, le damos la bienvenida a TimbaLandia 
 alert("En TimbaLandia tenemos los mejores juegos de azar, ¡reserve sus tickets para la gran rifa!");
 alert(`En caso de ser ganador le avisaremos a su correo ${email}`);
 
-// Creamos el prompt para preguntar si el usuario quiere ver información sobre sorteos anteriores
 
-let sorteosAnteriores = prompt("¿Desea ver información sobre sorteos anteriores? (escriba Si o escriba No)");
-if (sorteosAnteriores === "Si"){
-const  sorteo222 = new sorteo(sorteo01022022);
-alert(sorteo222.printMessage());
+// agregamos un class con datos sobre sorteos pasados por
+
+class sorteosAnteriores {
+  constructor(numero, fecha, premio, ganadores) {
+      this.numero = numero;
+      this.fecha = fecha;
+      this.premio = premio;
+      this.ganadores = ganadores;
+  }
+  // Método
+  infoSorteos() {
+      alert(`Sorteo número ${this.numero} de la fecha ${this.fecha}  con un premio de ${this.premio} y un total de ${this.ganadores} ganadores`);
+  }
 }
+// Creamos nuevos objetos con información de sorteos anteriores
+const sorteo222 = new sorteosAnteriores(222, '01-02-2022', '20000000 ARS', 10);
+const sorteo223 = new sorteosAnteriores(223, '04-02-2022', '40000000 ARS', 5);
+
+
+// Mostramos información de sorteos anteriores
+alert("Información de sorteos anteriores");
+sorteo222.infoSorteos();
+sorteo223.infoSorteos();
+
 
 
 // Pedimos la cantidad de tickets que el usuario quiere comprar para la rida
 
+alert("A continuación podrá comprar sus tickets para la rifa");
+alert("La cantidad máxima de tickets que puede comprar es de 20 y no puede ser 0");
+
+// Agregamos un do while para chequear la cantidad de tickets
+
 let cantidadTickets = parseInt(prompt(`¿Cuántos tickets para la rifa vas a comprar ${nombre}?`));
+let cantidadInput;
+while(cantidadTickets > 20 || isNaN(cantidadTickets) || cantidadTickets === 0){
+  document.write(`Cantidad de tickets incorrecta, intente de nuevo`);
+  window.location.pathname('cuenta.html');
+} 
+
+// Agregamos un for para multiplicar el precio por la cantidad de tickets
+
 for(let i= 20; i>= cantidadTickets ; i++){
     let resultado = cantidadTickets * i;
     
