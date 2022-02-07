@@ -8,10 +8,34 @@ let nombre = prompt("¿Cuál es su nombre?");
 let email = prompt("Ingrese su correo electrónico");
 let anio = parseInt(prompt("¿En qué año nació?"));
 let fecha = new Date();
-let anioActual = fecha.getFullYear();
+const anioActual = fecha.getFullYear();
 let edad = anioActual - anio;
 
-// Condicional para detectar si el usuario es menor de edad 
+// agregamos un class con datos sobre sorteos pasados por
+
+class Sorteos {
+    constructor(sorteo) {
+      this.numero = sorteo.numero;
+      this.fecha = sorteo.fecha;
+      this.premio = sorteo.premio;
+      this.ganadores = sorteo.ganadores;
+      }
+  
+    printMessage() {
+      console.log(
+        `Sorteo n° ${this.numero}: de la fecha ${this.fecha}, con un premio de ${this.premio} tuvo ${this.director} ganadores `
+      )
+    }
+  }
+
+  const sorteo01022022 = {
+    numero: 222,
+    fecha: "01-02-2022",
+    premio: "3.000.000 ARS",
+    ganadores: "12"
+  };
+  
+// While para detectar si el usuario es menor de edad 
 
 while (edad < 18 || isNaN(anio)){
 
@@ -28,6 +52,15 @@ document.write(`Usted tiene ${edad} años, le damos la bienvenida a TimbaLandia 
 
 alert("En TimbaLandia tenemos los mejores juegos de azar, ¡reserve sus tickets para la gran rifa!");
 alert(`En caso de ser ganador le avisaremos a su correo ${email}`);
+
+// Creamos el prompt para preguntar si el usuario quiere ver información sobre sorteos anteriores
+
+let sorteosAnteriores = prompt("¿Desea ver información sobre sorteos anteriores? (escriba Si o escriba No)");
+if (sorteosAnteriores === "Si"){
+const  sorteo222 = new sorteo(sorteo01022022);
+alert(sorteo222.printMessage());
+}
+
 
 // Pedimos la cantidad de tickets que el usuario quiere comprar para la rida
 
