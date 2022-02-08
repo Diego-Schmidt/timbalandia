@@ -52,7 +52,7 @@ const sorteo223 = new sorteosAnteriores(223, '04-02-2022', '40000000 ARS', 5);
 
 
 // Mostramos información de sorteos anteriores
-let quiereInfoSorteos = prompt("¿Quiere ver información sobre sorteos anteriores? escriba Si o No")
+let quiereInfoSorteos = prompt("¿Quiere ver información sobre los últimos sorteos? escriba Si o No")
 if(quiereInfoSorteos === "Si"){
 alert("Información de sorteos anteriores");
 sorteo222.infoSorteos();
