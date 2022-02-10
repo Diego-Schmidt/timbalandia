@@ -11,7 +11,7 @@ let fecha = new Date();
 const anioActual = fecha.getFullYear();
 let edad = anioActual - anio;
 
-// Detectamos si el usuario pone su nombre y su email
+// Detectamos si el usuario pone su nombre y su email usando RegEx
 
 function validateEmail(email) 
     {
@@ -91,7 +91,9 @@ const sorteos = [
     
   ];
   
-  
+  // FIND
+// console.log(sorteos.find(sorteo => sorteo.numero === 222).numero);
+// console.log(sorteos.filter(c => c.numero === 222));
 
 // Mostramos información de sorteos anteriores recientemente pasado usando el template class sorteosAnteriores y el método infoSorteos
 
@@ -110,11 +112,11 @@ sorteo236.infoSorteos();
 
  let quiereInfoSorteo = parseInt(prompt("¿Quiere ver información sobre algún sorteo en específico? escriba el número - del 222 al 236"));
  if(isNaN(quiereInfoSorteo) != true || quiereInfoSorteo >= 222 || quiereInfoSorteo <= 239) {
-const encontrado = sorteos.filter(x => x.numero === quiereInfoSorteo);
-// let sorteoEncontradoRaw = encontrado.toString();
-let sorteoEncontrado = JSON.stringify(encontrado);
-let sorteoLimpio =  sorteoEncontrado.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ' ');
-alert(sorteoLimpio);
+// Busco el sorteo por el número dado por el usuario en la variable quiereInfoSorteo, lo convierto a String para poder usarlo en alert y limpio carácteres no deseados del string con replace
+sorteoEncontradoRaw = sorteos.filter(c => c.numero === quiereInfoSorteo);
+sorteoEncontradoToString = JSON.stringify(sorteoEncontradoRaw);
+sorteoEncontradoLimpio = sorteoEncontradoToString.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ' ');
+alert(sorteoEncontradoLimpio);
  }
 
 // Pedimos la cantidad de tickets que el usuario quiere comprar para la rifa
