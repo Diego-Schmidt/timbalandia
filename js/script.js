@@ -11,8 +11,23 @@ let fecha = new Date();
 const anioActual = fecha.getFullYear();
 let edad = anioActual - anio;
 
+// Detectamos si el usuario pone su nombre y su email
 
-  
+function validateEmail(email) 
+    {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
+    console.log(validateEmail(email));
+
+while (validateEmail(email) != true || isNaN(nombre) != true) {
+
+    document.write(`No colocó un email válido, intente de nuevo`);
+    window.location.pathname('menores.html');
+
+}
+
 // While para detectar si el usuario es menor de edad 
 
 while (edad < 18 || isNaN(anio)){
@@ -32,33 +47,80 @@ alert("En TimbaLandia tenemos los mejores juegos de azar, ¡reserve sus tickets 
 alert(`En caso de ser ganador le avisaremos a su correo ${email}`);
 
 
-// agregamos un class con datos sobre sorteos pasados por
+// agregamos un class con datos sobre sorteos pasados
 
 class sorteosAnteriores {
-  constructor(numero, fecha, premio, ganadores) {
+  constructor(numero, fecha, numGanadores, premio, ganadores) {
       this.numero = numero;
       this.fecha = fecha;
+      this.numGanadores = numGanadores; 
       this.premio = premio;
       this.ganadores = ganadores;
   }
   // Método
   infoSorteos() {
-      alert(`Sorteo número ${this.numero} de la fecha ${this.fecha}  con un premio de ${this.premio} y un total de ${this.ganadores} ganadores`);
+      alert(`Sorteo número ${this.numero} de la fecha ${this.fecha}  , los números ganadores fueron ${this.numGanadores}  con un premio de ${this.premio} y un total de ${this.ganadores} ganadores`);
   }
 }
 // Creamos nuevos objetos con información de sorteos anteriores
-const sorteo222 = new sorteosAnteriores(222, '01-02-2022', '20000000 ARS', 10);
-const sorteo223 = new sorteosAnteriores(223, '04-02-2022', '40000000 ARS', 5);
+const sorteo222 = new sorteosAnteriores(222, '01-01-2022', '3542 2586 4896 3548', '20000000 ARS', 10);
+const sorteo223 = new sorteosAnteriores(223, '04-01-2022', '7849 5624 3124 7489', '40000000 ARS', 5);
+const sorteo224 = new sorteosAnteriores(222, '06-01-2022', '7849 5624 3124 7489', '20000000 ARS', 10);
+const sorteo225 = new sorteosAnteriores(223, '09-01-2022', '7849 5624 3124 7489', '40000000 ARS', 5);
+const sorteo226 = new sorteosAnteriores(222, '12-01-2022', '7849 5624 3124 7489', '20000000 ARS', 13);
+const sorteo227 = new sorteosAnteriores(223, '17-01-2022', '7849 5624 3124 7489', '40000000 ARS', 12);
+const sorteo228 = new sorteosAnteriores(222, '22-01-2022', '7849 5624 3124 7489', '20000000 ARS', 7);
+const sorteo229 = new sorteosAnteriores(223, '26-01-2022', '7849 5624 3124 7489', '40000000 ARS', 5);
+const sorteo230 = new sorteosAnteriores(222, '31-01-2022', '7849 5624 3124 7489', '20000000 ARS', 11);
+const sorteo231 = new sorteosAnteriores(223, '03-02-2022', '7849 5624 3124 7489', '40000000 ARS', 5);
+const sorteo232 = new sorteosAnteriores(222, '06-02-2022', '7849 5624 3124 7489', '20000000 ARS', 6);
+const sorteo233 = new sorteosAnteriores(223, '09-02-2022', '7849 5624 3124 7489', '40000000 ARS', 5);
+const sorteo234 = new sorteosAnteriores(222, '12-02-2022', '7849 5624 3124 7489', '20000000 ARS', 13);
+const sorteo235 = new sorteosAnteriores(223, '15-02-2022', '7849 5624 3124 7489', '40000000 ARS', 3);
+const sorteo236 = new sorteosAnteriores(222, '19-02-2022', '7849 5624 3124 7489', '20000000 ARS', 1);
+const sorteo237 = new sorteosAnteriores(223, '22-02-2022', '7849 5624 3124 7489', '40000000 ARS', 5);
+const sorteo238 = new sorteosAnteriores(222, '26-02-2022', '7849 5624 3124 7489', '20000000 ARS', 10);
+const sorteo239 = new sorteosAnteriores(223, '29-02-2022', '7849 5624 3124 7489', '40000000 ARS', 5);
+
+let sorteoArr222 = [222, '01-01-2022', '3542 2586 4896 3548', '20000000 ARS', 10];
+let sorteoArr223 = [223, '04-01-2022', '7849 5624 3124 7489', '40000000 ARS', 5];
+let sorteoArr224 = [222, '06-01-2022', '7849 5624 3124 7489', '20000000 ARS', 10];
+let sorteoArr225 = [223, '09-01-2022', '7849 5624 3124 7489', '40000000 ARS', 5];
+let sorteoArr226 = [222, '12-01-2022', '7849 5624 3124 7489', '20000000 ARS', 13];
+let sorteoArr227 = [223, '17-01-2022', '7849 5624 3124 7489', '40000000 ARS', 12];
+let sorteoArr228 = [222, '22-01-2022', '7849 5624 3124 7489', '20000000 ARS', 7];
+let sorteoArr229 = [223, '26-01-2022', '7849 5624 3124 7489', '40000000 ARS', 5];
+let sorteoArr230 = [222, '31-01-2022', '7849 5624 3124 7489', '20000000 ARS', 11];
+let sorteoArr231 = [223, '03-02-2022', '7849 5624 3124 7489', '40000000 ARS', 5];
+let sorteoArr232 = [222, '06-02-2022', '7849 5624 3124 7489', '20000000 ARS', 6];
+let sorteoArr233 = [223, '09-02-2022', '7849 5624 3124 7489', '40000000 ARS', 5];
+let sorteoArr234 = [222, '12-02-2022', '7849 5624 3124 7489', '20000000 ARS', 13];
+let sorteoArr235 = [223, '15-02-2022', '7849 5624 3124 7489', '40000000 ARS', 3];
+let sorteoArr236 = [222, '19-02-2022', '7849 5624 3124 7489', '20000000 ARS', 1];
+let sorteoArr237 = [223, '22-02-2022', '7849 5624 3124 7489', '40000000 ARS', 5];
+let sorteoArr238 = [222, '26-02-2022', '7849 5624 3124 7489', '20000000 ARS', 10];
+let sorteoArr239 = [223, '29-02-2022', '7849 5624 3124 7489', '40000000 ARS', 5];
+
+
+
 
 
 // Mostramos información de sorteos anteriores
-let quiereInfoSorteos = prompt("¿Quiere ver información sobre los últimos sorteos? escriba Si o No")
+let quiereInfoSorteos = prompt("¿Quiere ver información sobre los últimos 3 sorteos? escriba Si o No")
 if(quiereInfoSorteos === "Si"){
 alert("Información de sorteos anteriores");
-sorteo222.infoSorteos();
-sorteo223.infoSorteos();
+sorteo237.infoSorteos();
+sorteo238.infoSorteos();
+sorteo239.infoSorteos();
 }
 
+// Le preguntamos al usuario si quiere ver información sobre algún sorteo en específico y que indique el número del sorteo que quiere ver
+
+let quiereInfoSorteo = parseInt(prompt("¿Quiere ver información sobre algún sorteo en específico? escriba el número - del 222 al 239"));
+let sorteoNum = 'sorteo' + quiereInfoSorteo + '.infoSorteos();';
+if(quiereInfoSorteo >= 222 && quiereInfoSorteo <= 239) {
+console.log(typeOf(sorteo222));
+}
 
 // Pedimos la cantidad de tickets que el usuario quiere comprar para la rida
 
@@ -92,12 +154,30 @@ let finalBruBank = resultado - porBruBank;
 
 // Generamos números de 4 dígitos al azar en un array y seleccionamos en base a la cantidad de tickets comprados
 
-  var elegidos = [];
+  let elegidos = [];
   while(elegidos.length < cantidadTickets){
-      var r = Math.floor(Math.random(9999 - 1000) * 100) + 1000;
+    //   var r = Math.floor(Math.random(9999 - 1000) * 100) + 1000;
+      var r = Math.floor(1000 + Math.random() * 9000);
       if(elegidos.indexOf(r) === -1) elegidos.push(r);
   }
   console.log(elegidos);
+
+// mezclamos el array elegidos
+
+/**
+ * Función para mezclar el array en el lugar
+ * @param {Array} a es el array que contiene los items
+ * 
+ */
+//  function shuffle(a) {
+//     for (let i = a.length - 1; i > 0; i--) {
+//         const j = Math.floor(Math.random() * (i + 1));
+//         [a[i], a[j]] = [a[j], a[i]];
+//     }
+//     return a;
+// }
+
+// let elegidosMezclados = shuffle(elegidos);
 
 // convertimos el array elegidos en string para mostrarlo
 
