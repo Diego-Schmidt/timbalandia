@@ -91,11 +91,8 @@ const sorteos = [
     
   ];
   
-  // FIND
-// console.log(sorteos.find(sorteo => sorteo.numero === 222).numero);
-// console.log(sorteos.filter(c => c.numero === 222));
 
-// Mostramos información de sorteos anteriores recientemente pasado usando el template class sorteosAnteriores y el método infoSorteos
+// Mostramos información de sorteos anteriores recientes usando el template class sorteosAnteriores y el método infoSorteos
 
 let quiereInfoSorteosCercanos = prompt("¿Quiere ver información sobre los últimos 3 sorteos? escriba Si o No")
 if(quiereInfoSorteosCercanos === "Si"){
@@ -104,8 +101,6 @@ sorteo234.infoSorteos();
 sorteo235.infoSorteos();
 sorteo236.infoSorteos();
 }
-
-
 
 // Le preguntamos al usuario si quiere ver información sobre algún sorteo en específico y que indique el número del sorteo que quiere ver
 // Filtramos la información de sorteos usando el array de objetos llamado sorteos.
