@@ -7,7 +7,7 @@
     <img src="assets/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">TimbaLandia ¡la tierra de la timba! proyecto CoderHouse - Desafío complementario  "Incorporando arrays"</h3>
+  <h3 align="center">TimbaLandia ¡la tierra de la timba! proyecto CoderHouse - Desafío  "DOM"</h3>
 
   <p align="center">
     Readme en construcción
