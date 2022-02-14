@@ -29,7 +29,8 @@
               Inicio
             </a>
           </li>
-          <li>
+         <!-- codigo reservado para versiones futuras -->
+          <!-- <li>
             <a href="./pages/cuenta.html" class="nav-link ttext-warning">
               <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
               Panel
@@ -40,42 +41,51 @@
               <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
               Crypto
             </a>
-          </li>
+          </li> -->
           <li>
             <a href="#" class="nav-link text-warning">
               <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
               Juegos
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#" class="nav-link text-warning">
               <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
               Acerca de
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
   </div>
   <div class="px-3 py-2 border-bottom mb-3">
     <div class="container d-flex flex-wrap justify-content-center">
-      <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
-        <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
+      <form id="formuLogin" class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
+        <div id="saludo" class="bg-warning"><h6 class="text-default text-center border border-3 border-danger rounded">identifiquese para jugar</h6></div>
+        <div id="avisoLoginPls" class="bg-warning"></div>
+        <!-- Buscador desactivado porque no tiene función real por el momento -->
+        <!-- <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search"> -->
       </form>
 
       <div class="text-end">
-        <button id="botoningresar" type="button" class="btn btn-light text-dark me-2" onclick="openForm()" >Ingresar</button>
-        <button id="botonregistro" type="button" class="btn btn-primary" onclick="window.location.href = './pages/registro.html'">Registrarse</button>
-        <div class="form-popup" id="myForm">
-          <form action="./pages/cuenta.html" class="form-container">
+        <div id="ingresarsalir"><button id="botonIngresar" type="button" class="btn btn-light text-dark me-2" onclick="openForm()" >Ingresar</button></div>
+        <div class="form-popup" id="miLogin">
+          <form id="formuLogin" action="index.html" class="form-container">
             <h1>Identificarse</h1>
         
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="Su Email" name="email" required value="coderhouse@aprobame.com">
-        
+
+            <label for="usuario"><b>Usuario</b></label>
+            <input type="text" placeholder="Ejemplo: Coder" name="usuario" required value="Coder">
+
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required value="mipasbuordsaludosalostutores">
-            <button type="submit" class="btn">Entrar</button>
+
+            <label for="logged"></label>
+            <input class="d-none" type=”text” name="logged" value="logged">
+
+            <input type="password" placeholder="Ingrese su clave" name="psw" required value="mipasbuordsaludosalostutores">
+            <button type="submit" class="btn" onclick="formuLogin()"">Entrar</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Cerrar</button>
           </form>
 
@@ -89,6 +99,7 @@
   
   <div class="container py-3">
     <main id="principal">
+      
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm bg-success pack100">
@@ -103,7 +114,7 @@
                 <li>1 número de regalo para la lotería</li>
                 <li>10% de chance de ganar un premio extra en cada sorteo</li>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning">Comprar</button>
+              <button id="100TC" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning">Identifíquese para Comprar</button>
             </div>
           </div>
         </div>
@@ -120,7 +131,7 @@
                 <li>2 números de regalo para la lotería</li>
                 <li>25% de chances de ganar un premio extra en cada sorteo</li>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-primary">Comprar</button>
+              <button id="500TC" type="button" class="w-100 btn btn-lg btn-primary">Identifíquese para Comprar</button>
             </div>
           </div>
         </div>
@@ -137,7 +148,7 @@
                 <li>3 n{umeros de regalo para la lotería</li>
                 <li>30% de posibilidades de ganar un premio extra en cada sorteo</li>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-primary">Comprar</button>
+              <button  id="1000TC" type="button" class="w-100 btn btn-lg btn-primary">Identifíquese para Comprar</button>
             </div>
           </div>
         </div>
@@ -147,7 +158,7 @@
   <!-- Inicio del footer -->
 
 <div class="container">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <footer class="d-flex flex-wrap justify-content-around align-content-center align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
       <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
         <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
@@ -155,7 +166,7 @@
       <span class="">&copy; 2022 Timbalandia!</span>
     </div>
 
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex text-center">
       <img class="m-2" src="./assets/facebook-brands.svg" width="20px" alt="Timbalandia Facebook">
       <img class="m-2" src="./assets/twitter-brands.svg" width="20px" alt="Timbalandia Twitter">
       <img class="m-2" src="./assets/instagram-square-brands.svg" width="20px" alt="Timbalandia Instagram">
@@ -165,3 +176,4 @@
     <script src="./js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+</html>

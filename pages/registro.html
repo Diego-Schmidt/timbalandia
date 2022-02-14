@@ -73,12 +73,12 @@
       
                       <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registro de usuario</p>
       
-                      <form action="" method="post" id="formuRegistro" class="mx-1 mx-md-4">
+                      <form action="" method="post" id="datosRegistro" class="mx-1 mx-md-4">
       
                         <div class="d-flex flex-row align-items-center mb-4">
                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                             <div class="form-outline flex-fill mb-0">
-                              <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" required/>
+                              <input type="text" name="nombreUsuario" id="datosUsuario" class="form-control" required/>
                               <label class="form-label" for="nombreUsuario">Nombre de usuario</label>
                             </div>
                           </div>
@@ -87,7 +87,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <input type="text" name="nombre" id="nombre" class="form-control" required/>
+                            <input type="text" name="nombre" id="datosNombre" class="form-control" required/>
                             <label class="form-label" for="nombre">Nombre</label>
                           </div>
                         </div>
@@ -95,7 +95,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <input type="email" name="email" id="correo" class="form-control" required/>
+                            <input type="email" name="email" id="datosCorreo" class="form-control" required/>
                             <label class="form-label" for="correo">Email</label>
                           </div>
                         </div>
@@ -103,7 +103,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                             <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                             <div class="form-outline flex-fill mb-0">
-                              <input type="date" name="cumple" id="cumple" class="form-control" placeholder="dd/mm/yyyy" min='2004-01-01' max='2022-01-01' required/>
+                              <input type="date" name="cumple" id="datosCumple" class="form-control" placeholder="dd/mm/yyyy" max='2004-01-01' required/>
                               <label class="form-label" for="cumple">Fecha de nacimiento</label>
                               <h6 id="mensajeMenores" class="text-danger">Para jugar tiene que ser mayor de 18 años</h6>
                             </div>
@@ -112,7 +112,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <input type="password" name="clave" id="clave" class="form-control" required/>
+                            <input type="password" name="clave" id="datosClave" class="form-control" required/>
                             <label class="form-label" for="clave">Contraseña</label>
                           </div>
                         </div>
@@ -138,7 +138,7 @@
                         </div>
       
                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                          <button type="button" class="btn btn-primary btn-lg" onclick="formuRegistro()">Registrarse</button>
+                          <button id="botonEnviar" type="submit" class="btn btn-primary btn-lg" onclick="botonRegistro(e)">Registrarse</button>
                         </div>
       
                       </form>

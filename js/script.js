@@ -1,116 +1,72 @@
-// Venta de tickets de lotería para el sitio ficticio Timbalandia por Diego Schmidt para coderhouse :D
+// Sitio ficticio Timbalandia por Diego Schmidt para coderhouse :D
 
-// Esta versión del html y javascript son rudimentarios con el objetivo de completar el desafío opcional número 1
+// Esta versión del html y javascript son rudimentarios con el objetivo de completar el desafío DOM
 
 // Declaramos las variables iniciales
 
 // obtenemos la url de la página actual para tener información del usuario - se puede encriptar y desencriptar
-// No usado pero dejado acá porque es útil :P
-// const queryString = window.location.search;
+// Login rudimentarios, se complejizará al aprender local storage ¿?
+
+const queryString = window.location.search;
 // console.log(queryString);
-// const urlParams = new URLSearchParams(queryString);
-// const email = urlParams.get('email')
-// console.log(email);
+const urlParams = new URLSearchParams(queryString);
+const email = urlParams.get('email');
+const usuario = urlParams.get('usuario');
+const clave = urlParams.get('psw');
+const logged = urlParams.get('logged');
 
-// Botón de login en inicio
+// Guardamos los datos de la url para futuro Acceso
+
+localStorage.setItem('email',`${email}`);
+localStorage.setItem('usuario',`${usuario}`);
+localStorage.setItem('clave',`${clave}`);
+localStorage.setItem('timbacoins','300');
+localStorage.setItem('loggedIn',`${logged}`);
+
+// Creamos variables para obtener los datos almacenados localmente
+
+let storedEmail = localStorage.getItem('email');
+let storedUsuario = localStorage.getItem('usuario');
+let storedClave = localStorage.getItem('psw');
+let billeteraTimbaCoins = localStorage.getItem('timbacoins');
+let isLogged = localStorage.getItem('loggedIn');
+
+// Botón de login en inicio, mostrar y ocultar box
+
 function openForm() {
-  document.getElementById("myForm").style.display = "block";
+  document.getElementById("miLogin").style.display = "block";
 }
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+function cerrarLogin() {
+  document.getElementById("miLogin").style.display = "none";
 }
 
-const formu = document.getElementById("myForm");
+const formu = document.getElementById("miLogin");
 
-// formulario de registro , validación de los campos
+// obtenemos los datos del formulario de login para hacer el simulador
 
-function formuRegistro() {
-  let nombreUsuario = document.getElementById("formuRegistro").elements[0].value;
-  let nombre = document.getElementById("formuRegistro").elements[1].value;
-  let email = document.getElementById("formuRegistro").elements[2].value;
-  let cumple = document.getElementById("formuRegistro").elements[3].value;
-  let clave = document.getElementById("formuRegistro").elements[4].value;
-  let datos = "usuario:"+nombreUsuario+",nombre:"+nombre+",email:"+email+",cumple:"+cumple+",clave:"+clave;
-  let fecha = cumple.split('-');
-  let anio = fecha.slice(0,1);
-  let anioHoy = new Date().getFullYear();
-  let edad = anioHoy - anio;
-  if (edad < 18){
-    document.getElementById("mensajeMenores").innerHTML = "Los menores de edad no pueden jugar";
-    console.log("es menor de edad");
-  } else {
-    console.log("Bienvenido a Timbalandia");
-  }
-  // const datosArray = datos.split(',');
-  // console.log(datosArray);
-  // console.log(edad);
- }
+var submit_btn=document.getElementById("formuLogin");
+		submit_btn.onclick=function(e)
+		{
+			e.preventDefault();
+		}
 
-//  let cumpleTest = document.getElementById("cumple").elements[1].value;
-//  let fechaTest = cumpleTest.split('-');
-//  let anioTest = 
-// // chequear edad
-// if (edad < 18){
-// console.log("Usted es menor");
-// }
-// Guardamos los datos del usuario para usarlos
+// saludamos al usuario si se identifica y agregamos el botón salir, habilitamos botones de comprar
 
-// const usuarioRegistrado = {
-//   usuario: usuario,
-//   nombre: nombre,
-//   email: email,
-//   clave: clave,
-//   cumple: cumple,
-// }
-
-// window.localStorage.setItem('usuario', JSON.stringify(usuarioRegistrado));
-
-
-// function nombre() {
-//   var x = document.getElementById("nombre").elements[0].value;
-//   document.getElementById("nombre").innerHTML = x;
-// }
-// function correo() {
-//   var x = document.getElementById("correo").elements[0].value;
-//   document.getElementById("correo").innerHTML = x;
-// }
-
-// function cumple() {
-//   var x = document.getElementById("cumple").elements[0].value;
-//   document.getElementById("cumple").innerHTML = x;
-// }
-
-// function clave() {
-//   var x = document.getElementById("clave").elements[0].value;
-//   document.getElementById("clave").innerHTML = x;
-// }
-
-
-// var val=document.URL;
-// var start;
-// start = val.search(/a=/);
-// var end;
-// end = val.search(/&/);
-// var thispos = val.substring(start+2,end);
-
-// formu.id = "myForm";
-// formu.onclick = () => {
-//   console.log("HOla soy el click del botón 2");
-//   const elementoDos = document.createElement("p");
-//   elementoDos.innerHTML = "Soy la respuesta del botón 2";
-//   respuesta.prepend(elementoDos);
-// }
-
-// botoningresar.id = "botoningresar";
-// botoningresar.onclick = () => {
-//   console.log("HOla soy el click del botón 2");
-//   const login = document.getElementById("login");
-//   login.style.display = "flex";;
-//   respuesta.prepend(elementoDos);
-// }
-
-// const boton2 = document.getElementById("boton-2");
+if (isLogged == "logged") {
+  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${storedUsuario}! :D ¿Todo bien? tienes ${billeteraTimbaCoins} TC <img src="./assets/tc.gif" width="120px"/></h6>`;
+  document.getElementById("ingresarsalir").innerHTML = '<button id="botonSalir" type="button" class="btn btn-light text-dark me-2" onclick="salir()" >Salir</button>';
+  document.getElementById("100TC").innerHTML = '<button  id="100TC" type="button" class="w-100 btn btn-lg btn-primary">Comprar</button>';
+  document.getElementById("500TC").innerHTML = '<button  id="500TC" type="button" class="w-100 btn btn-lg btn-primary">Comprar</button>';
+  document.getElementById("1000TC").innerHTML = '<button  id="1000TC" type="button" class="w-100 btn btn-lg btn-primary">Comprar</button>';
+  window.history.pushState({}, document.title, window.location.pathname);
+} 
+function salir(){
+  localStorage.removeItem("loggedIn");
+  // localStorage.removeItem('loggedIn');
+  window.history.pushState({}, document.title, window.location.pathname);
+  window.location.href="index.html";
+}
 
 
 
