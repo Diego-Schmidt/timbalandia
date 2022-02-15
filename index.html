@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    
+    <script defer src="https://friconix.com/cdn/friconix.js"> </script>
     <title>Timbalandia - Inicio</title>
 </head>
 <body class="">
@@ -68,33 +68,58 @@
       </form>
 
       <div class="text-end">
-        <div id="ingresarsalir"><button id="botonIngresar" type="button" class="btn btn-light text-dark me-2" onclick="openForm()" >Ingresar</button></div>
-        <div class="form-popup" id="miLogin">
-          <form id="formuLogin" action="index.html" class="form-container">
-            <h1>Identificarse</h1>
+        <div id="ingresarsalir"><button id="botonIngresar" type="button" class="btn btn-light text-dark me-2" onclick="abrirLogin()" >Ingresar</button></div>
+        <div class="form-popup bg-success" id="miLogin">
+          <div class="login bg-warning text-white">
+            <form name='form-login'>
         
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Su Email" name="email" required value="coderhouse@aprobame.com">
-
-            <label for="usuario"><b>Usuario</b></label>
-            <input type="text" placeholder="Ejemplo: Coder" name="usuario" required value="Coder">
-
-            <label for="psw"><b>Password</b></label>
-
-            <label for="logged"></label>
-            <input class="d-none" type=”text” name="logged" value="logged">
-
-            <input type="password" placeholder="Ingrese su clave" name="psw" required value="mipasbuordsaludosalostutores">
-            <button type="submit" class="btn" onclick="formuLogin()"">Entrar</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Cerrar</button>
-          </form>
-
-          
-
+                <h1>SIGN IN</h1>
+        
+                <label for="userName">Email</label>
+                <input type="email" id="userName" placeholder="Username" required>
+              
+                <label for="userPw">Password</label>
+                <input type="password" id= "userPw" placeholder="Password" required>
+        
+                <div id="remember">
+                    <input type="checkbox" value="lsRememberMe" id="rememberMe"
+                           style="display: inline-block;">
+                    <label>Remember me</label>
+                </div>
+        
+                <input id= "login_btn" type="submit" value="Login" onclick="check()">
+                <button type="button" class="btn cancel text-white" onclick="cerrarLogin()">Cerrar</button>
+            </form>
         </div>
       </div>
-    </div>
+  </div> 
+
+  <div id="registrarse"><button id="botonRegistrarse" type="button" class="btn btn-light text-dark me-2" onclick="abrirRegistro()" >Registrarse</button></div>
+  <div class="form-popup bg-success" id="miRegistro">
+    <div class="login bg-warning text-white">
+      <form name='form-login'>
+  
+          <h1>REGISTER</h1>
+  
+          <label for="name">Email</label>
+          <input type="email" id="name" placeholder="Username" required>
+  
+          <label for="pw">Password</label>
+          <input type="password"
+                 id= "pw"
+                 placeholder="Password" required>
+  
+          <ul class="helper-text">
+              <li class="length">Must be at least 8 characters long.</li>
+              <li class="lowercase">Must contain a lowercase letter.</li>
+              <li class="uppercase">Must contain an uppercase letter.</li>
+              <li class="special">Must contain a number or special character.</li>
+          </ul>
+          <input id="rgstr_btn" type="submit" value="Register" onclick="store()">
+          <button type="button" class="btn cancel text-white" onclick="cerrarRegistro()">Cerrar</button>
+      </form>
   </div>
+
 </header>
   
   <div class="container py-3">
@@ -104,24 +129,24 @@
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm bg-success pack100">
             <div class="card-header py-3">
-              <h4 class="my-0 fw-normal text-white">100 Timbacoins</h4>
+              <img src="./assets/tc.gif" width="120px"/><h4 class="my-0 fw-normal text-white">100 TC</h4>
             </div>
             <div class="card-body">
               <h1 class="card-title pricing-card-title text-white">100 AR$</h1>
               <ul class="list-unstyled mt-3 mb-4 text-white">
                 <li>100 Timbacoins</li>
-                <li>Acceso a todos los juegos liga Esmeralda</li>
+                <li>Acceso a todos los juegos liga Trebol</li>
                 <li>1 número de regalo para la lotería</li>
                 <li>10% de chance de ganar un premio extra en cada sorteo</li>
               </ul>
-              <button id="100TC" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning">Identifíquese para Comprar</button>
+              <button id="100TC" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning" onclick="doLoginPls()">Identifíquese para Comprar</button>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm bg-warning pack500">
             <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">500 Timbacoins</h4>
+              <img src="./assets/tc.gif" width="120px"/><h4 class="my-0 fw-normal">500 TC</h4>
             </div>
             <div class="card-body">
               <h1 class="card-title pricing-card-title">500 AR$</h1>
@@ -131,14 +156,14 @@
                 <li>2 números de regalo para la lotería</li>
                 <li>25% de chances de ganar un premio extra en cada sorteo</li>
               </ul>
-              <button id="500TC" type="button" class="w-100 btn btn-lg btn-primary">Identifíquese para Comprar</button>
+              <button id="500TC" type="button" class="w-100 btn btn-lg btn-primary" onclick="doLoginPls()">Identifíquese para Comprar</button>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm border-primary bg-danger pack1000">
             <div class="card-header py-3 text-white bg-primary border-primary">
-              <h4 class="my-0 fw-normal">1000 Timbacoins</h4>
+              <img src="./assets/tc.gif" width="120px"/><h4 class="my-0 fw-normal">1000 TC</h4>
             </div>
             <div class="card-body">
               <h1 class="card-title pricing-card-title">1000 AR$</h1>
@@ -148,17 +173,18 @@
                 <li>3 n{umeros de regalo para la lotería</li>
                 <li>30% de posibilidades de ganar un premio extra en cada sorteo</li>
               </ul>
-              <button  id="1000TC" type="button" class="w-100 btn btn-lg btn-primary">Identifíquese para Comprar</button>
+              <button  id="1000TC" type="button" class="w-100 btn btn-lg btn-primary" onclick="doLoginPls()">Identifíquese para Comprar</button>
             </div>
           </div>
         </div>
       </div>
     </main>
   </div>
+  
   <!-- Inicio del footer -->
 
 <div class="container">
-  <footer class="d-flex flex-wrap justify-content-around align-content-center align-items-center py-3 my-4 border-top">
+  <footer class="d-flex flex-wrap justify-content-around align-content-center align-items-center py-3 my-4 border-top bg-dark text-warning">
     <div class="col-md-4 d-flex align-items-center">
       <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
         <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
@@ -166,10 +192,10 @@
       <span class="">&copy; 2022 Timbalandia!</span>
     </div>
 
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex text-center">
-      <img class="m-2" src="./assets/facebook-brands.svg" width="20px" alt="Timbalandia Facebook">
-      <img class="m-2" src="./assets/twitter-brands.svg" width="20px" alt="Timbalandia Twitter">
-      <img class="m-2" src="./assets/instagram-square-brands.svg" width="20px" alt="Timbalandia Instagram">
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex text-center text-warning">
+      <i class="fi-snsuxl-facebook me-2" style="color: rgb(255, 208, 0);"></i>
+      <i class="fi-xnsuxl-twitter-solid me-2" style="color: rgb(255, 208, 0);"></i>
+      <i class="fi-xnsuxl-instagram" style="color: rgb(255, 208, 0);"></i>
     </ul>
   </footer>
 </div>
