@@ -37,7 +37,7 @@ function store(){
   }else{
       localStorage.setItem('name', name.value);
       localStorage.setItem('pw', pw.value);
-      localStorage.setItem('TC', '300');
+      localStorage.setItem('TC', 300);
       localStorage.setItem('logged', 'yes');
       alert('Su cuenta fue creada con éxito :)');
   }
@@ -63,7 +63,7 @@ function check(){
       localStorage.setItem('logged', 'yes');
       document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${storedName}! :D ¿Todo bien? -- Tenés ${tc2} TC <img src="./assets/tc.gif" width="30px"/></h6>`;
   }else{
-      alert('Error on login');
+      alert('Usuario o contraseña incorrectos, pruebe de nuevo');
   }
 }
 
@@ -72,9 +72,9 @@ if (estaLogeado == "yes"){
   document.getElementById("registrarse").innerHTML = `<button id="botonRegistrarse" type="button" class="btn btn-light text-dark me-2 d-none" onclick="abrirRegistro()" >Registrarse</button>`;
   document.getElementById("ingresarsalir").innerHTML = `<button id="botonIngresar" type="button" class="btn btn-light text-dark me-2" onclick="salir()" >Salir</button>`;
   document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! :D ¿Todo bien? -- Tenés ${timbCoins} TC <img src="./assets/tc.gif" width="30px"/></h6>`;
-  document.getElementById("100TC").innerHTML = `Comprar`;
-  document.getElementById("500TC").innerHTML = `Comprar`;
-  document.getElementById("1000TC").innerHTML = `Comprar`;
+  document.getElementById("comprar100").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning" onclick="comprar(100)">Comprar</button>`;
+  document.getElementById("comprar500").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprar(500)">Comprar</button>`;
+  document.getElementById("comprar1000").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprar(1000)">Comprar</button>`;
 } 
 
 function salir(){
@@ -82,10 +82,17 @@ function salir(){
   window.location.href="index.html";
 }
 
-// function doLoginPls(){
-//   if (estaLogeado == "no"){
+// Comprar tc
 
-// }
+function comprar(b){
+  let currentTc = +localStorage.getItem('TC');
+  let compra = currentTc + b;
+  localStorage.setItem('TC', `${compra}`);
+  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! :D ¿Todo bien? -- Tenés ${compra} TC <img src="./assets/tc.gif" width="30px"/></h6>`;
+  alert(`Gracias por comprar ${b} TimbaCoins :D , ahora tienes ${compra} TimbaCoins`);
+  console.log(compra);
+}
+
 
 // Togle Botón login
 
