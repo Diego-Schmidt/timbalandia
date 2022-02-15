@@ -98,6 +98,9 @@ function comprar(b){
   let currentTc = +localStorage.getItem('TC');
   let compra = currentTc + b;
   localStorage.setItem('TC', `${compra}`);
+  var audio = new Audio('./assets/comprartc.mp3');
+    audio.loop = false;
+    audio.play(); 
   document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! :D ¿Todo bien? -- Tenés ${compra} TC <img src="./assets/tc.gif" width="30px"/></h6>`;
   alert(`Gracias por comprar ${b} TimbaCoins :D , ahora tienes ${compra} TimbaCoins`);
   console.log(compra);
