@@ -68,7 +68,7 @@ function check(){
   if(userName.value == storedName && userPw.value == storedPw){
       alert('Te identificaste exitosamente :).');
       localStorage.setItem('logged', 'yes');
-      document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${storedName}! :D ¿Todo bien? -- Tenés ${tc2} TC <img src="./assets/tc.gif" width="30px"/></h6>`;
+      document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${storedName}! :D ¿Todo bien? -- <img src="./assets/billetera.png" width="20px" /> ${tc2} TC <img src="./assets/tc.gif" width="20px"/></h6>`;
   }else{
       alert('Usuario o contraseña incorrectos, pruebe de nuevo');
   }
@@ -79,7 +79,7 @@ function check(){
 if (estaLogeado == "yes"){
   document.getElementById("registrarse").innerHTML = `<button id="botonRegistrarse" type="button" class="btn btn-light text-dark me-2 d-none" onclick="abrirRegistro()" >Registrarse</button>`;
   document.getElementById("ingresarsalir").innerHTML = `<button id="botonIngresar" type="button" class="btn btn-light text-dark me-2" onclick="salir()" >Salir</button>`;
-  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! :D ¿Todo bien? -- Tenés ${timbCoins} TC <img src="./assets/tc.gif" width="30px"/></h6>`;
+  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! :D ¿Todo bien? -- <img src="./assets/billetera.png" width="20px" /> ${timbCoins} TC <img src="./assets/tc.gif" width="20px"/></h6>`;
   document.getElementById("comprar100").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning" onclick="comprar(100)">Comprar</button>`;
   document.getElementById("comprar500").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprar(500)">Comprar</button>`;
   document.getElementById("comprar1000").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprar(1000)">Comprar</button>`;
@@ -110,7 +110,7 @@ function comprar(b){
   let audio = new Audio('./assets/comprartc.mp3');
     audio.loop = false;
     audio.play(); 
-  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! :D ¿Todo bien? -- Tenés ${compra} TC <img src="./assets/tc.gif" width="30px"/></h6>`;
+  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! :D ¿Todo bien? -- <img src="./assets/billetera.png" width="20px" /> ${compra} TC <img src="./assets/tc.gif" width="20px"/></h6>`;
   // alert(`Gracias por comprar ${b} TimbaCoins :D , ahora tienes ${compra} TimbaCoins`);
   console.log(compra);
 }
