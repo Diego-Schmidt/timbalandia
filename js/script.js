@@ -3,15 +3,17 @@
 // Esta versión del html y javascript son rudimentarios con el objetivo de completar el desafío DOM
 
 // Declaramos funciones y variables iniciales
-// Login rudimentarios, se complejizará al aprender local storage ¿?
+// Login rudimentarios, se complejizará al aprender otras cosas supongo ¿?
+
+// Molestamos al usuario pidiéndole datos y esas cosas para el registro
 
 function store(){
 
-  var name = document.getElementById('name');
-  var pw = document.getElementById('pw');
-  var lowerCaseLetters = /[a-z]/g;
-  var upperCaseLetters = /[A-Z]/g;
-  var numbers = /[0-9]/g;
+  let name = document.getElementById('name');
+  let pw = document.getElementById('pw');
+  let lowerCaseLetters = /[a-z]/g;
+  let upperCaseLetters = /[A-Z]/g;
+  let numbers = /[0-9]/g;
 
   if(name.value.length == 0){
       alert('Por favor ponga su email');
@@ -37,25 +39,28 @@ function store(){
   }else{
       localStorage.setItem('name', name.value);
       localStorage.setItem('pw', pw.value);
+ // Le damos 300 TimbaCoins de regalo al usuario y colocamos su estado en Logged yes     
       localStorage.setItem('TC', 300);
       localStorage.setItem('logged', 'yes');
       alert('Su cuenta fue creada con éxito :)');
   }
 }
 
-var estaLogeado = localStorage.getItem('logged');
-var nombreLog = localStorage.getItem('name');
-var timbCoins = localStorage.getItem('TC');
+// Declaramos variables para usarlas en otras funciones
+
+let estaLogeado = localStorage.getItem('logged');
+let nombreLog = localStorage.getItem('name');
+let timbCoins = localStorage.getItem('TC');
 
 
-// Revisamos que los datos del login sean correctos y saludamos - Si el login es correcto se almacena el item Logged con
+// Revisamos que los datos del login sean correctos y saludamos - Si el login es correcto se almacena el item Logged con el valor yes
 
 function check(){
-  var storedName = localStorage.getItem('name');
-  var storedPw = localStorage.getItem('pw');
+  let storedName = localStorage.getItem('name');
+  let storedPw = localStorage.getItem('pw');
 
-  var userName = document.getElementById('userName');
-  var userPw = document.getElementById('userPw');
+  let userName = document.getElementById('userName');
+  let userPw = document.getElementById('userPw');
   // var userRemember = document.getElementById("rememberMe");
 
   if(userName.value == storedName && userPw.value == storedPw){
@@ -67,6 +72,7 @@ function check(){
   }
 }
 
+// Revisamos si el usuario ya está identificado para mostrar los mensajes a usuarios logeados
 
 if (estaLogeado == "yes"){
   document.getElementById("registrarse").innerHTML = `<button id="botonRegistrarse" type="button" class="btn btn-light text-dark me-2 d-none" onclick="abrirRegistro()" >Registrarse</button>`;
@@ -77,12 +83,14 @@ if (estaLogeado == "yes"){
   document.getElementById("comprar1000").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprar(1000)">Comprar</button>`;
 } 
 
+// Creamos la función salir para cambiar el estado de logged a no
+
 function salir(){
   localStorage.setItem('logged', 'no');
   window.location.href="index.html";
 }
 
-// Comprar tc
+// Función para comprar tc creada para agregar la cantidad de TC de las promos a la billetera del usuario al presionar el botón comprar
 
 function comprar(b){
   let currentTc = +localStorage.getItem('TC');
@@ -116,3 +124,4 @@ function cerrarRegistro() {
   document.getElementById("miRegistro").style.display = "none";
 }
 
+// Fin por el momento , en otras versiones del sistema se agregarán más interacciones con el usuario
