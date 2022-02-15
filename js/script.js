@@ -43,6 +43,8 @@ function store(){
       localStorage.setItem('TC', 300);
       localStorage.setItem('logged', 'yes');
       alert('Su cuenta fue creada con éxito :)');
+      window.location.href="index.html";
+
   }
 }
 
