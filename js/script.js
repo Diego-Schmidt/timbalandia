@@ -24,17 +24,17 @@ function store(){
   }else if(name.value.length == 0 && pw.value.length == 0){
       alert('Por favor ponga un email y una contraseña');
 
-  }else if(pw.value.length > 8){
-      alert('Máximo 8 carácteres');
+  // }else if(pw.value.length > 8){
+  //     alert('Máximo 8 carácteres');
 
-  }else if(!pw.value.match(numbers)){
-      alert('Por favor agregue un número');
+  // }else if(!pw.value.match(numbers)){
+  //     alert('Por favor agregue un número');
 
-  }else if(!pw.value.match(upperCaseLetters)){
-      alert('por favor agregue por lo menos 1 letra mayúscula');
+  // }else if(!pw.value.match(upperCaseLetters)){
+  //     alert('por favor agregue por lo menos 1 letra mayúscula');
 
-  }else if(!pw.value.match(lowerCaseLetters)){
-      alert('Por favor agregue por lo menos 1 letra minúscula');
+  // }else if(!pw.value.match(lowerCaseLetters)){
+  //     alert('Por favor agregue por lo menos 1 letra minúscula');
 
   }else{
       localStorage.setItem('name', name.value);
@@ -66,7 +66,7 @@ function check(){
   // var userRemember = document.getElementById("rememberMe");
 
   if(userName.value == storedName && userPw.value == storedPw){
-      alert('Te identificaste exitosamente :).');
+      // alert('Te identificaste exitosamente :).');
       localStorage.setItem('logged', 'yes');
       document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${storedName}! :D ¿Todo bien? -- <img src="./assets/billetera.png" width="20px" /> ${tc2} TC <img src="./assets/tc.gif" width="20px"/></h6>`;
   }else{
@@ -115,12 +115,12 @@ function comprar(b){
   console.log(compra);
 }
 
-
 // Togle Botón login
 
 function abrirLogin() {
   document.getElementById("miLogin").style.display = "block";
   document.getElementById("miRegistro").style.display = "none";
+  document.getElementById("miLogin").classList.add('swirl-in-fwd');
 }
 
 function cerrarLogin() {
@@ -132,6 +132,7 @@ function cerrarLogin() {
 function abrirRegistro() {
   document.getElementById("miRegistro").style.display = "block";
   document.getElementById("miLogin").style.display = "none";
+  document.getElementById("miRegistro").classList.add('swirl-in-fwd');
 }
 
 function cerrarRegistro() {

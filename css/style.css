@@ -46,14 +46,15 @@ body {
   display: none;
   position: relative;
   bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
+  margin-top: 0;
+  right: 13px;
+  /* border: 3px solid #f1f1f1; */
   z-index: 999;
 }
 
 /* Add styles to the form container */
 .form-container {
-  max-width: 500px;
+  max-width: 450px;
   padding: 50px 100 50px 50px;
   background-color: white;
   position: relative;
@@ -87,12 +88,12 @@ body {
   opacity: 0.8;
 }
 
-/* Add a red background color to the cancel button */
+/* Color rojo botón cancelar */
 .form-container .cancel {
   background-color: red;
 }
 
-/* Add some hover effects to buttons */
+/* efecto a los botones */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
@@ -113,7 +114,7 @@ body {
         .login form {
           margin: auto;
           padding: 22px 22px 22px 22px;
-          width: 100%;
+          width: 92%;
           border-radius: 5px;
           background: #023812;
           border-top: 3px solid #434a52;
@@ -321,6 +322,37 @@ body {
   100% {
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+/* animación de los formularios de login y registro */
+
+.swirl-in-fwd {
+	-webkit-animation: swirl-in-fwd 0.6s ease-out both;
+	        animation: swirl-in-fwd 0.6s ease-out both;
+}
+@-webkit-keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+            transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+            transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
     opacity: 1;
   }
 }

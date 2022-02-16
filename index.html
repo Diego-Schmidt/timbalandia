@@ -69,62 +69,64 @@
 
       <div class="text-end">
         <div id="ingresarsalir"><button id="botonIngresar" type="button" class="btn btn-light text-dark me-2" onclick="abrirLogin()" >Ingresar</button></div>
-        <div class="form-popup bg-success" id="miLogin">
-          <div class="login bg-warning text-white">
-            <form name='form-login'>
         
-                <h1>Ingresar</h1>
-        
-                <label for="userName">Email</label>
-                <input type="email" id="userName" placeholder="Usuario" required>
-              
-                <label for="userPw">Password</label>
-                <input type="password" id= "userPw" placeholder="Contraseña" required>
-        
-                <!-- <div id="remember">
-                    <input type="checkbox" value="lsRememberMe" id="rememberMe"
-                           style="display: inline-block;">
-                    <label>Remember me</label>
-                </div> -->
-        
-                <input id= "login_btn" type="submit" value="Login" onclick="check()">
-                <button type="button" class="btn cancel text-white text-warning" onclick="cerrarLogin()">Cerrar</button>
-            </form>
-        </div>
+      </div>
+      <div class="text-end">
+        <div id="registrarse"><button id="botonRegistrarse" type="button" class="btn btn-light text-dark me-2" onclick="abrirRegistro()" >Registrarse</button></div>
       </div>
   </div> 
-
-  <div id="registrarse"><button id="botonRegistrarse" type="button" class="btn btn-light text-dark me-2" onclick="abrirRegistro()" >Registrarse</button></div>
-  <div class="form-popup bg-success" id="miRegistro">
-    <div class="login bg-warning text-white">
-      <form name='form-login'>
   
-          <h1>REGISTRO</h1>
-  
-          <label for="name">Email</label>
-          <input type="email" id="name" placeholder="Usuario" required>
-  
-          <label for="pw">Contraseña</label>
-          <input type="password"
-                 id= "pw"
-                 placeholder="Password" required>
-  
-          <ul class="helper-text">
-              <li class="length">Al menos 8 carácteres de largo.</li>
-              <li class="lowercase">Debe contener una minúscula.</li>
-              <li class="uppercase">Tiene que contener una mayúscula.</li>
-              <li class="special">Debe contener un carácer especial como *.</li>
-          </ul>
-          <input id="rgstr_btn" type="submit" value="Registrarse" onclick="store()">
-          <button type="button" class="btn cancel text-warning" onclick="cerrarRegistro()">Cerrar</button>
-      </form>
-  </div>
 
 </header>
   
-  <div class="container py-3">
+  <div class="container my-0">
     <main id="principal">
+      <div class="form-popup" id="miRegistro">
+        <div class="login text-white">
+          <form name='form-login'>
       
+              <h1>REGISTRO</h1>
+      
+              <label for="name">Email</label>
+              <input type="email" id="name" placeholder="Usuario" required>
+      
+              <label for="pw">Contraseña</label>
+              <input type="password"
+                     id= "pw"
+                     placeholder="Password" required>
+      
+              <ul class="helper-text">
+                  <!-- <li class="length">Al menos 8 carácteres de largo.</li>
+                  <li class="lowercase">Debe contener una minúscula.</li>
+                  <li class="uppercase">Tiene que contener una mayúscula.</li>
+                  <li class="special">Debe contener un carácer especial como *.</li> -->
+              </ul>
+              <input id="rgstr_btn" type="submit" value="Registrarse" onclick="store()">
+              <button type="button" class="btn cancel text-warning" onclick="cerrarRegistro()">Cerrar</button>
+          </form>
+      </div></div>
+      <div class="form-popup" id="miLogin">
+        <div class="login text-white">
+          <form name='form-login'>
+      
+              <h1>Ingresar</h1>
+      
+              <label for="userName">Email</label>
+              <input type="email" id="userName" placeholder="Email" required>
+            
+              <label for="userPw">Password</label>
+              <input type="password" id= "userPw" placeholder="Contraseña" required>
+      
+              <!-- <div id="remember">
+                  <input type="checkbox" value="lsRememberMe" id="rememberMe"
+                         style="display: inline-block;">
+                  <label>Remember me</label>
+              </div> -->
+      
+              <input id= "login_btn" type="submit" value="Login" onclick="check()">
+              <button type="button" class="btn cancel text-warning" onclick="cerrarLogin()">Cerrar</button>
+          </form>
+      </div></div>
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm bg-success pack100">
