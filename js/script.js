@@ -68,7 +68,7 @@ function check(){
   if(userName.value == storedName && userPw.value == storedPw){
       // alert('Te identificaste exitosamente :).');
       localStorage.setItem('logged', 'yes');
-      document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${storedName}! :D ¿Todo bien? -- <img src="./assets/billetera.png" width="20px" /> ${tc2} TC <img src="./assets/tc.gif" width="20px"/></h6>`;
+      document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${storedName}! :D ¿Todo bien? -- <img src="./assets/billetera.png" width="20px" /> ${timbCoins} TC <img src="./assets/tc.gif" width="20px"/></h6>`;
   }else{
       alert('Usuario o contraseña incorrectos, pruebe de nuevo');
   }
@@ -118,24 +118,41 @@ function comprar(b){
 // Togle Botón login
 
 function abrirLogin() {
+  let audio = new Audio('./assets/pop.mp3');
+    audio.loop = false;
+    audio.play(); 
   document.getElementById("miLogin").style.display = "block";
   document.getElementById("miRegistro").style.display = "none";
+  // document.getElementById("miRegistro").classList.toggle("d-none");
   document.getElementById("miLogin").classList.add('swirl-in-fwd');
 }
 
 function cerrarLogin() {
+  // document.getElementById("miLogin").classList.remove('swirl-in-fwd');
+  // document.getElementById("miLogin").classList.add('swirl-out-bck');
+  // document.getElementById("miLogin").classList.toggle("d-none");
+  let audio = new Audio('./assets/popout.mp3');
+  audio.loop = false;
+  audio.play(); 
   document.getElementById("miLogin").style.display = "none";
 }
 
 // Togle Botón registrarse 
 
 function abrirRegistro() {
+  let audio = new Audio('./assets/pop.mp3');
+    audio.loop = false;
+    audio.play(); 
   document.getElementById("miRegistro").style.display = "block";
   document.getElementById("miLogin").style.display = "none";
+  // document.getElementById("miLogin").classList.toggle("d-none");
   document.getElementById("miRegistro").classList.add('swirl-in-fwd');
 }
 
 function cerrarRegistro() {
+  let audio = new Audio('./assets/popout.mp3');
+  audio.loop = false;
+  audio.play(); 
   document.getElementById("miRegistro").style.display = "none";
 }
 

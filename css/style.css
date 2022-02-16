@@ -326,7 +326,7 @@ body {
   }
 }
 
-/* animación de los formularios de login y registro */
+/* animación de entrada de los formularios de login y registro */
 
 .swirl-in-fwd {
 	-webkit-animation: swirl-in-fwd 0.6s ease-out both;
@@ -354,5 +354,37 @@ body {
     -webkit-transform: rotate(0) scale(1);
             transform: rotate(0) scale(1);
     opacity: 1;
+  }
+}
+
+/* animación de salida de los formularios de registro y login */
+
+.swirl-out-bck {
+	-webkit-animation: swirl-out-bck 0.6s ease-in both;
+	        animation: swirl-out-bck 0.6s ease-in both;
+}
+
+@-webkit-keyframes swirl-out-bck {
+  0% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-540deg) scale(0);
+            transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+}
+@keyframes swirl-out-bck {
+  0% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-540deg) scale(0);
+            transform: rotate(-540deg) scale(0);
+    opacity: 0;
   }
 }
