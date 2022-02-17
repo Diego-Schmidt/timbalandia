@@ -229,7 +229,7 @@ function cerrarLogin() {
   // document.getElementById("miLogin").classList.remove('swirl-in-fwd');
   // document.getElementById("miLogin").classList.add('swirl-out-bck');
   // document.getElementById("miLogin").classList.toggle("d-none");
-  let audio = new Audio('./assets/popout.mp3');
+  let audio = new Audio(`${ruta}/assets/popout.mp3`);
   audio.loop = false;
   audio.play(); 
   document.getElementById("miLogin").style.display = "none";
