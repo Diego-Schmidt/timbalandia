@@ -161,7 +161,7 @@ function comprar(b){
 
 function comprarNumero(a,b){
   let currentTc = +localStorage.getItem('TC');
-  let agregarNumeros = cantidadNumerosLoteria + a;
+  let agregarNumeros = parseInt(cantidadNumerosLoteria) + a;
   let compra = currentTc - b;
   // localStorage.setItem('TC', `${compra}`);
   switch(true) {
