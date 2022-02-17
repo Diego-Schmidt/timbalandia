@@ -7,8 +7,8 @@
     <img src="assets/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">TimbaLandia ¡la tierra de la timba! proyecto CoderHouse - Desafío  "DOM"</h3>
-
+  <h3 align="center">TimbaLandia ¡la tierra de la timba! proyecto CoderHouse - Desafío  "EVENTOS"</h3>
+ <h3><a href="https://diego-schmidt.github.io/timbalandia/">https://diego-schmidt.github.io/timbalandia/</a></h3>
   <p align="center">
     Readme en construcción
    
