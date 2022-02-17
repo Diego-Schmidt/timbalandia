@@ -153,10 +153,10 @@ function comprar(b){
 // Función para comprar números de la lotería
 
 function comprarNumero(b){
+  if(timbCoins >= b){
   let currentTc = +localStorage.getItem('TC');
   let compra = currentTc - b;
   localStorage.setItem('TC', `${compra}`);
-  do{
   switch(true) {
     case (b == 400):
       sonido = new Audio(`${ruta}/assets/compra4numeros.mp3`);
@@ -176,10 +176,11 @@ function comprarNumero(b){
   document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! :D ¿Todo bien? -- <img src="${ruta}/assets/billetera.png" width="20px" /> ${compra} TC <img src="${ruta}/assets/tc.gif" width="20px"/></h6>`;
   // alert(`Gracias por comprar ${b} TimbaCoins :D , ahora tienes ${compra} TimbaCoins`);
   console.log(compra);
-  } while (compra >= b);
+  } else {
     document.getElementById("comprar1").innerHTML = `<button id="C1" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning" onclick="nope()">No te alcanza</button>`;
     document.getElementById("comprar4").innerHTML = `<button id="C4" type="button" class="w-100 btn btn-lg btn-primary" onclick="nope()">No te alcanza</button>`;
     document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" onclick="nope()" >No te alcanza</button>`;
+  }
 }
 
 
