@@ -11,6 +11,7 @@ function store(){
 
   let name = document.getElementById('name');
   let pw = document.getElementById('pw');
+  let pp = document.getElementById('avatar');
   let lowerCaseLetters = /[a-z]/g;
   let upperCaseLetters = /[A-Z]/g;
   let numbers = /[0-9]/g;
@@ -43,8 +44,13 @@ function store(){
       localStorage.setItem('TC', 300);
       localStorage.setItem('CN', 0);
       localStorage.setItem('logged', 'yes');
-      alert('Su cuenta fue creada con éxito :)');
-      window.location.href="index.html";
+      // alert('Su cuenta fue creada con éxito :)');
+      let audio = new Audio(`${ruta}/assets/registrado.mp3`);
+      audio.loop = false;
+      audio.play(); 
+      window.setTimeout(function() {
+        window.location.href = `${ruta}/index.html`;
+    }, 1500);
 
   }
 }
@@ -55,6 +61,7 @@ let estaLogeado = localStorage.getItem('logged');
 let nombreLog = localStorage.getItem('name');
 let timbCoins = localStorage.getItem('TC');
 let cantidadNumerosLoteria = localStorage.getItem('CN'); // Fuaaa que nombre largo!
+let avatar = localStorage.getItem('avatar');
 // Variables para determinar la ruta relativa de las imágenes dinámicas
 
 let url = window.location.pathname;
@@ -181,7 +188,7 @@ function comprarNumero(a,b){
     sonido.play(); 
   } 
   
-  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="${ruta}/assets/billetera.png" width="20px" /> ${compra} TC <img src="${ruta}/assets/tc.gif" width="20px"/>Tienes ${agregarNumeros} Lotimbos</h6>`;
+  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="${ruta}/assets/billetera.png" width="20px" /> ${compra} TC <img src="${ruta}/assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotimbos</h6>`;
   // alert(`Gracias por comprar ${b} TimbaCoins :D , ahora tienes ${compra} TimbaCoins`);
   // console.log(compra);
   // console.log(currentTc);

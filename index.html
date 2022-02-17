@@ -103,9 +103,11 @@
               <input type="email" id="name" placeholder="Usuario" required>
       
               <label for="pw">Contraseña</label>
-              <input type="password"
-                     id= "pw"
-                     placeholder="Password" required>
+              <input type="password" id= "pw" placeholder="Password" required>
+              
+              <div class="flex-column"><label for="avatar">Tu foto</label>
+              <input type="file" id="avatar" name="foto" accept=".jpg,.png,.webp,.gif">>
+              </div>
       
               <ul class="helper-text">
                   <!-- <li class="length">Al menos 8 carácteres de largo.</li>
@@ -113,6 +115,7 @@
                   <li class="uppercase">Tiene que contener una mayúscula.</li>
                   <li class="special">Debe contener un carácer especial como *.</li> -->
               </ul>
+
               <input class="text-dark" id="rgstr_btn" type="submit" value="Registrarse" onclick="store()">
               <button type="button" class="btn cancel text-warning" onclick="cerrarRegistro()">Cerrar</button>
           </form>
