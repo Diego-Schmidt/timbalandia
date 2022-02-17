@@ -41,6 +41,7 @@ function store(){
       localStorage.setItem('pw', pw.value);
  // Le damos 300 TimbaCoins de regalo al usuario y colocamos su estado en Logged yes     
       localStorage.setItem('TC', 300);
+      localStorage.setItem('CN', 0);
       localStorage.setItem('logged', 'yes');
       alert('Su cuenta fue creada con éxito :)');
       window.location.href="index.html";
@@ -53,7 +54,7 @@ function store(){
 let estaLogeado = localStorage.getItem('logged');
 let nombreLog = localStorage.getItem('name');
 let timbCoins = localStorage.getItem('TC');
-
+let cantidadNumerosLoteria = localStorage.getItem('CN'); // Fuaaa que nombre largo!
 // Variables para determinar la ruta relativa de las imágenes dinámicas
 
 let url = window.location.pathname;
@@ -81,7 +82,7 @@ function check(){
   if(userName.value == storedName && userPw.value == storedPw){
       // alert('Te identificaste exitosamente :).');
       localStorage.setItem('logged', 'yes');
-      document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${storedName}! :D ¿Todo bien? -- <img src="./assets/billetera.png" width="20px" /> ${timbCoins} TC <img src="./assets/tc.gif" width="20px"/></h6>`;
+      document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${storedName}! <img src="./assets/billetera.png" width="20px" /> ${timbCoins} TC <img src="./assets/tc.gif" width="20px"/> Tienes ${cantidadNumerosLoteria} Lotimbos</h6>`;
   }else{
       alert('Usuario o contraseña incorrectos, pruebe de nuevo');
   }
@@ -92,17 +93,17 @@ function check(){
 if (pagina == "index.html" && estaLogeado == "yes"){
   document.getElementById("registrarse").innerHTML = `<button id="botonRegistrarse" type="button" class="btn btn-light text-dark me-2 d-none" onclick="abrirRegistro()" >Registrarse</button>`;
   document.getElementById("ingresarsalir").innerHTML = `<button id="botonIngresar" type="button" class="btn btn-light text-dark me-2" onclick="salir()" >Salir</button>`;
-  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! :D ¿Todo bien? -- <img src="${ruta}/assets/billetera.png" width="20px" /> ${timbCoins} TC <img src="${ruta}/assets/tc.gif" width="20px"/></h6>`;
+  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="${ruta}/assets/billetera.png" width="20px" /> ${timbCoins} TC <img src="${ruta}/assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotimbos</h6>`;
   document.getElementById("comprar100").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning" onclick="comprar(100)">Comprar</button>`;
   document.getElementById("comprar500").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprar(500)">Comprar</button>`;
   document.getElementById("comprar1000").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprar(1000)">Comprar</button>`;
 } else if(pagina == "loteria.html" && estaLogeado == "yes"){
   document.getElementById("registrarse").innerHTML = `<button id="botonRegistrarse" type="button" class="btn btn-light text-dark me-2 d-none" onclick="abrirRegistro()" >Registrarse</button>`;
   document.getElementById("ingresarsalir").innerHTML = `<button id="botonIngresar" type="button" class="btn btn-light text-dark me-2" onclick="salir()" >Salir</button>`;
-  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! :D ¿Todo bien? -- <img src="${ruta}/assets/billetera.png" width="20px" /> ${timbCoins} TC <img src="${ruta}/assets/tc.gif" width="20px"/></h6>`;
-  document.getElementById("comprar1").innerHTML = `<button id="C1" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning" onclick="comprarNumero(100)">Comprar</button>`;
-  document.getElementById("comprar4").innerHTML = `<button id="C4" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprarNumero(400)">Comprar</button>`;
-  document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprarNumero(800)">Comprar</button>`;
+  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="${ruta}/assets/billetera.png" width="20px" /> ${timbCoins} TC <img src="${ruta}/assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotimbos</h6>`;
+  document.getElementById("comprar1").innerHTML = `<button id="C1" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning" onclick="comprarNumero(1,100)">Comprar</button>`;
+  document.getElementById("comprar4").innerHTML = `<button id="C4" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprarNumero(4,400)">Comprar</button>`;
+  document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprarNumero(8,800)">Comprar</button>`;
   }
 
 
@@ -120,18 +121,24 @@ function salir(){
     document.getElementById("comprar500").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-primary" onclick="">Identifíquese para comprar</button>`;
     document.getElementById("comprar1000").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-primary" onclick="">Identifíquese para comprar</button>`;
     let audio = new Audio(`${ruta}/assets/logoff.mp3`);
-      audio.loop = false;
-      audio.play(); 
+    audio.loop = false;
+    audio.play(); 
+    window.setTimeout(function() {
+      window.location.href = `${ruta}/index.html`;
+  }, 5000);
       } else if(pagina == "loteria.html"){
         document.getElementById("registrarse").innerHTML = `<button id="botonRegistrarse" type="button" class="btn btn-light text-dark me-2 d-none" onclick="abrirRegistro()" >Registrarse</button>`;
         document.getElementById("ingresarsalir").innerHTML = `<button id="botonIngresar" type="button" class="btn btn-light text-dark me-2" onclick="salir()" >Salir</button>`;
         document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Chau ${nombreLog}! hasta la próxima :D</h6>`;
-        document.getElementById("comprar1").innerHTML = `<button id="C1" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning" onclick="comprarNumero(100)">Identifiquese para comprar</button>`;
-        document.getElementById("comprar4").innerHTML = `<button id="C4" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprarNumero(400)">Identifiquese para comprar</button>`;
-        document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprarNumero(800)">Identifiquese para comprar</button>`;
+        document.getElementById("comprar1").innerHTML = `<button id="C1" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning">Identifiquese para comprar</button>`;
+        document.getElementById("comprar4").innerHTML = `<button id="C4" type="button" class="w-100 btn btn-lg btn-primary" >Identifiquese para comprar</button>`;
+        document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" >Identifiquese para comprar</button>`;
         let audio = new Audio(`${ruta}/assets/logoff.mp3`);
       audio.loop = false;
       audio.play(); 
+      window.setTimeout(function() {
+        window.location.href = `${ruta}/index.html`;
+    }, 5000);
         }
   // window.location.href="index.html";
 }
@@ -145,15 +152,16 @@ function comprar(b){
   let audio = new Audio('./assets/comprartc.mp3');
     audio.loop = false;
     audio.play(); 
-  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! :D ¿Todo bien? -- <img src="./assets/billetera.png" width="20px" /> ${compra} TC <img src="./assets/tc.gif" width="20px"/></h6>`;
+  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="./assets/billetera.png" width="20px" /> ${compra} TC <img src="./assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotimbos</h6>`;
   // alert(`Gracias por comprar ${b} TimbaCoins :D , ahora tienes ${compra} TimbaCoins`);
   console.log(compra);
 }
 
 // Función para comprar números de la lotería
 
-function comprarNumero(b){
+function comprarNumero(a,b){
   let currentTc = +localStorage.getItem('TC');
+  let agregarNumeros = cantidadNumerosLoteria + a;
   let compra = currentTc - b;
   // localStorage.setItem('TC', `${compra}`);
   switch(true) {
@@ -173,7 +181,7 @@ function comprarNumero(b){
     sonido.play(); 
   } 
   
-  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! :D ¿Todo bien? -- <img src="${ruta}/assets/billetera.png" width="20px" /> ${compra} TC <img src="${ruta}/assets/tc.gif" width="20px"/></h6>`;
+  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="${ruta}/assets/billetera.png" width="20px" /> ${compra} TC <img src="${ruta}/assets/tc.gif" width="20px"/>Tienes ${agregarNumeros} Lotimbos</h6>`;
   // alert(`Gracias por comprar ${b} TimbaCoins :D , ahora tienes ${compra} TimbaCoins`);
   // console.log(compra);
   // console.log(currentTc);
@@ -183,9 +191,10 @@ function comprarNumero(b){
     document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" onclick="nope()" >No te alcanza</button>`;
   } else {
     localStorage.setItem('TC', `${compra}`);
-    document.getElementById("comprar1").innerHTML = `<button id="C1" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning" onclick="comprarNumero(100)">Comprar</button>`;
-    document.getElementById("comprar4").innerHTML = `<button id="C4" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprarNumero(400)">Comprar</button>`;
-    document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprarNumero(800)" >Comprar</button>`;
+    localStorage.setItem('CN', `${agregarNumeros}`);
+    document.getElementById("comprar1").innerHTML = `<button id="C1" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning" onclick="comprarNumero(1,100)">Comprar</button>`;
+    document.getElementById("comprar4").innerHTML = `<button id="C4" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprarNumero(4,400)">Comprar</button>`;
+    document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprarNumero(8,800)" >Comprar</button>`;
   }
   console.log(currentTc,compra);
 }
