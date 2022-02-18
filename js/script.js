@@ -193,12 +193,14 @@ function comprarNumero(a,b){
   // console.log(compra);
   // console.log(currentTc);
   if(currentTc < b){
+    document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="${ruta}/assets/billetera.png" width="20px" /> ${compra} TC <img src="${ruta}/assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotimbos</h6>`;
     document.getElementById("comprar1").innerHTML = `<button id="C1" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning" onclick="nope()">No te alcanza</button>`;
     document.getElementById("comprar4").innerHTML = `<button id="C4" type="button" class="w-100 btn btn-lg btn-primary" onclick="nope()">No te alcanza</button>`;
     document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" onclick="nope()" >No te alcanza</button>`;
   } else {
     localStorage.setItem('TC', `${compra}`);
     localStorage.setItem('CN', `${agregarNumeros}`);
+    document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="${ruta}/assets/billetera.png" width="20px" /> ${compra} TC <img src="${ruta}/assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotimbos</h6>`;
     document.getElementById("comprar1").innerHTML = `<button id="C1" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning" onclick="comprarNumero(1,100)">Comprar</button>`;
     document.getElementById("comprar4").innerHTML = `<button id="C4" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprarNumero(4,400)">Comprar</button>`;
     document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprarNumero(8,800)" >Comprar</button>`;
@@ -209,8 +211,12 @@ function comprarNumero(a,b){
 
 function nope(){
   let audio = new Audio(`${ruta}/assets/wrong.mp3`);
-  audio.loop = false;
-  audio.play();  
+      audio.loop = false;
+      audio.play(); 
+      window.setTimeout(function() {
+        window.location.href = 'loteria.html';
+    }, 1500);
+    
 }
 
 // Togle Botón login
