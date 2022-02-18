@@ -50,7 +50,7 @@ function store(){
       audio.play(); 
       window.setTimeout(function() {
         window.location.href = `${ruta}/index.html`;
-    }, 1500);
+    }, 2000);
 
   }
 }
@@ -91,6 +91,13 @@ function check(){
       localStorage.setItem('logged', 'yes');
       document.getElementById("linkPanel").style.display = "block";
       document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${storedName}! <img src="./assets/billetera.png" width="20px" /> ${timbCoins} TC <img src="./assets/tc.gif" width="20px"/> Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
+      document.getElementById("loginform-html").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Bienvenido ${storedName}! <img src="${ruta}/assets/logo.png" width="100px"/> </h6>`;
+      let audio = new Audio(`${ruta}/assets/login.mp3`);
+      audio.loop = false;
+      audio.play(); 
+      window.setTimeout(function() {
+        window.location.href = 'index.html';
+    }, 5000);
   }else{
       alert('Usuario o contraseña incorrectos, pruebe de nuevo');
   }
@@ -139,6 +146,7 @@ function salir(){
     document.getElementById("comprar100").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning" onclick="">Identifíquese para comprar</button>`;
     document.getElementById("comprar500").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-primary" onclick="">Identifíquese para comprar</button>`;
     document.getElementById("comprar1000").innerHTML = `<button id="100TC" type="button" class="w-100 btn btn-lg btn-primary" onclick="">Identifíquese para comprar</button>`;
+    document.getElementById("loginform-html").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Chau ${nombreLog}! <img src="${ruta}/assets/logotriste.png" width="100px"/> </h6>`;
     let audio = new Audio(`${ruta}/assets/logoff.mp3`);
     audio.loop = false;
     audio.play(); 
@@ -154,11 +162,12 @@ function salir(){
         document.getElementById("comprar1").innerHTML = `<button id="C1" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning">Identifiquese para comprar</button>`;
         document.getElementById("comprar4").innerHTML = `<button id="C4" type="button" class="w-100 btn btn-lg btn-primary" >Identifiquese para comprar</button>`;
         document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" >Identifiquese para comprar</button>`;
+        document.getElementById("loginform-html").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Chau ${nombreLog}! <img src="${ruta}/assets/logotriste.png" width="100px"/> </h6>`;
         let audio = new Audio(`${ruta}/assets/logoff.mp3`);
       audio.loop = false;
       audio.play(); 
       window.setTimeout(function() {
-        window.location.href = `${ruta}/index.html`;
+        window.location.href = '../index.html';
     }, 5000);
         } 
         else if (pagina == "cuenta.html"){
@@ -167,14 +176,12 @@ function salir(){
           document.getElementById("registrarse").innerHTML = `<button id="botonRegistrarse" type="button" class="btn btn-light text-dark me-2 d-none" onclick="abrirRegistro()" >Registrarse</button>`;
           document.getElementById("ingresarsalir").innerHTML = `<button id="botonIngresar" type="button" class="btn btn-light text-dark me-2" onclick="salir()" >Salir</button>`;
           document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Chau ${nombreLog}! hasta la próxima :D</h6>`;
-          document.getElementById("comprar1").innerHTML = `<button id="C1" type="button" class="w-100 btn btn-lg btn-outline-primary bg-warning">Identifiquese para comprar</button>`;
-          document.getElementById("comprar4").innerHTML = `<button id="C4" type="button" class="w-100 btn btn-lg btn-primary" >Identifiquese para comprar</button>`;
-          document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" >Identifiquese para comprar</button>`;
+          document.getElementById("loginform-html").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Chau ${nombreLog}! <img src="${ruta}/assets/logotriste.png" width="100px"/> </h6>`;
           let audio = new Audio(`${ruta}/assets/logoff.mp3`);
         audio.loop = false;
         audio.play(); 
         window.setTimeout(function() {
-          window.location.href = `${ruta}/index.html`;
+          window.location.href = '../index.html';
       }, 5000);
           } 
         }
@@ -187,7 +194,7 @@ function comprar(b){
   let currentTc = +localStorage.getItem('TC');
   let compra = currentTc + b;
   localStorage.setItem('TC', `${compra}`);
-  let audio = new Audio('./assets/comprartc.mp3');
+  let audio = new Audio(`${ruta}/assets/comprartc.mp3`);
     audio.loop = false;
     audio.play(); 
   document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="./assets/billetera.png" width="20px" /> ${compra} TC <img src="./assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
@@ -249,6 +256,15 @@ function nope(){
     }, 1500);
     
 }
+
+// Prevent Default botón login from
+function prevDef(){
+var submit_form=document.getElementById("login_btn");
+		submit_form.onsubmit=function(e)
+		{
+			e.preventDefault();
+		}
+  }
 
 // Togle Botón login
 
