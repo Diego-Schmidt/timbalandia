@@ -73,10 +73,10 @@ body {
           /* margin: auto; */
           padding: 22px 22px 22px 22px;
           width: 98%;
-          border-radius: 5px;
+          /* border-radius: 5px; */
           background: #023812c2;
-          border-top: 3px solid #434a52;
-          border-bottom: 3px solid #434a52;
+          /* border-top: 3px solid #434a52; */
+          /* border-bottom: 3px solid #434a52; */
         }
 
         .login form span {
