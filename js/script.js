@@ -225,19 +225,19 @@ function comprarNumero(a,b){
   // localStorage.setItem('TC', `${compra}`);
   switch(true) {
     case (b == 400):
-      toastyNotify(`Compraste ${b} Lotis`);
+      toastyNotify(`Compraste ${a} Lotis`);
       sonido = new Audio(`${ruta}/assets/compra4numeros.mp3`);
       sonido.loop = false;
       sonido.play(); 
       break;
     case (b == 800):
-      toastyNotify(`Compraste ${b} Lotis`);
+      toastyNotify(`Compraste ${a} Lotis`);
       sonido = new Audio(`${ruta}/assets/compra8numeros.mp3`);
       sonido.loop = false;
       sonido.play()
       break;
     default:
-    toastyNotify(`Compraste ${b} Lotis`);
+    toastyNotify(`Compraste ${a} Lotis`);
     sonido = new Audio(`${ruta}/assets/compra1numero.mp3`);
     sonido.loop = false;
     sonido.play(); 
