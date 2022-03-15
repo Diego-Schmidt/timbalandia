@@ -72,10 +72,32 @@ function store(){
   }
 }
 
+
+
+
+
+// Declaramos variables para usarlas en otras funciones
+
+let estaLogeado = localStorage.getItem('logged');
+let nombreLog = localStorage.getItem('name');
+let timbCoins = localStorage.getItem('TC');
+let cantidadNumerosLoteria = localStorage.getItem('CN'); // Fuaaa que nombre largo!
+let avatar = localStorage.getItem('avatar');
+// Variables para determinar la ruta relativa de las imágenes dinámicas
+
+let url = window.location.pathname;
+let pagina = url.split("/").pop();
+let ruta = "..";
+if(pagina != "index.html"){
+ruta = "..";
+} else {
+ruta = ".";
+}
+
 // Obtenemos la lista de usuarios 
 
 async function getUsers() {
-  let url = '../pages/users.json';
+  let url = 'users.json';
   try {
       let res = await fetch(url);
       return await res.json();
@@ -100,28 +122,6 @@ async function renderUsers() {
 }
 
 renderUsers();
-
-
-
-// Declaramos variables para usarlas en otras funciones
-
-let estaLogeado = localStorage.getItem('logged');
-let nombreLog = localStorage.getItem('name');
-let timbCoins = localStorage.getItem('TC');
-let cantidadNumerosLoteria = localStorage.getItem('CN'); // Fuaaa que nombre largo!
-let avatar = localStorage.getItem('avatar');
-// Variables para determinar la ruta relativa de las imágenes dinámicas
-
-let url = window.location.pathname;
-let pagina = url.split("/").pop();
-let ruta = "..";
-if(pagina != "index.html"){
-ruta = "..";
-} else {
-ruta = ".";
-}
-
-console.log(ruta);
 
 
 
