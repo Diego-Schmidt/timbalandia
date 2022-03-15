@@ -91,7 +91,7 @@ async function renderUsers() {
       let htmlSegment = `<div class="user">
                           <img src="${user.profileURL}" >
                           <h2>${user.firstName} ${user.lastName}</h2>
-                          <div class="puntos"><a href="email:${user.puntos}">${user.puntos}</a></div>
+                          <div class="puntos">${user.puntos} puntos</div>
                       </div>`;
 
       html += htmlSegment;
