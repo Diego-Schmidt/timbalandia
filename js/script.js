@@ -213,6 +213,15 @@ function salir(){
         window.setTimeout(function() {
           window.location.href = '../index.html';
       }, 5000);
+      else if (pagina == "top10.html"){
+        localStorage.setItem('logged', 'no');
+        domSalirTop10();
+        let audio = new Audio(`${ruta}/assets/logoff.mp3`);
+      audio.loop = false;
+      audio.play(); 
+      window.setTimeout(function() {
+        window.location.href = '../index.html';
+    }, 5000);
           } 
         }
   // window.location.href="index.html";

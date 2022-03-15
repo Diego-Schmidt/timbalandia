@@ -37,6 +37,17 @@ function domSalirCuenta(){
           document.getElementById("loginform-html").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Chau ${nombreLog}! <img src="${ruta}/assets/logotriste.png" width="100px"/> </h6>`;
 }
 
+function domSalirTop10(){
+    document.getElementById("linkPanel").style.display = "none";
+    document.getElementById("linkTop10").style.display = "none";
+          document.getElementById("registrarse").innerHTML = `<button id="botonRegistrarse" type="button" class="btn btn-light text-dark me-2 d-none" onclick="abrirRegistro()" >Registrarse</button>`;
+          document.getElementById("ingresarsalir").innerHTML = `<button id="botonIngresar" type="button" class="btn btn-light text-dark me-2" onclick="salir()" >Salir</button>`;
+          document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Chau ${nombreLog}! hasta la próxima :D</h6>`;
+          document.getElementById("loginform-html").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Chau ${nombreLog}! <img src="${ruta}/assets/logotriste.png" width="100px"/> </h6>`;
+}
+
+
+
 function domIsLogged(){
     document.getElementById("linkPanel").style.display = "block";
     document.getElementById("linkTop10").style.display = "block";
