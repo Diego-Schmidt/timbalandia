@@ -15,35 +15,35 @@
     "puntos":"258000"
 }
 {
-    "username": "juana",
-    "firstName": "Juana",
-    "lastName": "Dama",
+    "username": "maria",
+    "firstName": "Maria",
+    "lastName": "Juana",
     "gender": "Mujer",
     "profileURL": "../assets/mujer.png",
-    "puntos":"258000"
+    "puntos":"37000"
 }
 {
-    "username": "juana",
-    "firstName": "Juana",
-    "lastName": "Dama",
-    "gender": "Mujer",
-    "profileURL": "../assets/mujer.png",
-    "puntos":"258000"
+    "username": "roberto",
+    "firstName": "Roberto",
+    "lastName": "Monstruo",
+    "gender": "Hombre",
+    "profileURL": "../assets/hombre.png",
+    "puntos":"258000000"
 }
 {
-    "username": "juana",
-    "firstName": "Juana",
-    "lastName": "Dama",
-    "gender": "Mujer",
-    "profileURL": "../assets/mujer.png",
-    "puntos":"258000"
+    "username": "pepe",
+    "firstName": "Pedro",
+    "lastName": "Lepew",
+    "gender": "hombre",
+    "profileURL": "../assets/hombre.png",
+    "puntos":"228000"
 }
 {
-    "username": "juana",
-    "firstName": "Juana",
-    "lastName": "Dama",
+    "username": "analia",
+    "firstName": "Analia",
+    "lastName": "Mambrú",
     "gender": "Mujer",
     "profileURL": "../assets/mujer.png",
-    "puntos":"258000"
+    "puntos":"225000"
 }
 ]
