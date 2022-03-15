@@ -122,7 +122,7 @@ async function renderUsers() {
   let container = document.querySelector('.containertop10');
   container.innerHTML = html;
 }
-if (pagina === "usuarios.html"){
+if (pagina === "top10.html"){
 renderUsers();
 }
 

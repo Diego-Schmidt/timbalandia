@@ -1,3 +1,5 @@
+// Función para definir lo que se ve en el index al deslogearse
+
 function domSalirIndex(){
     document.getElementById("linkPanel").style.display = "none";
     document.getElementById("linkTop10").style.display = "none";
@@ -10,6 +12,8 @@ function domSalirIndex(){
     document.getElementById("loginform-html").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Chau ${nombreLog}! <img src="${ruta}/assets/logotriste.png" width="100px"/> </h6>`;
 }
 
+// Función para definir lo que se ve en loteria al deslogearse
+
 function domSalirLoteria(){
     document.getElementById("linkPanel").style.display = "none";
     document.getElementById("linkTop10").style.display = "none";
@@ -21,6 +25,8 @@ function domSalirLoteria(){
         document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" >Identifiquese para comprar</button>`;
         document.getElementById("loginform-html").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Chau ${nombreLog}! <img src="${ruta}/assets/logotriste.png" width="100px"/> </h6>`;
 }
+
+// Función para definir lo que se ve en el index al deslogearse
 
 function domSalirCuenta(){
     document.getElementById("linkPanel").style.display = "none";
