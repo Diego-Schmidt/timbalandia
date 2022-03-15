@@ -4,7 +4,6 @@
     "lastName": "Olivares",
     "gender": "Hombre",
     "profileURL": "../assets/hombre.png",
-    // "email": "john.doe@example.com"
     "puntos":"258000"
 },
 {
@@ -13,7 +12,6 @@
     "lastName": "Dama",
     "gender": "Mujer",
     "profileURL": "../assets/mujer.png",
-    // "email": "jane.doe@example.com",
     "puntos":"258000"
 }
 ]
