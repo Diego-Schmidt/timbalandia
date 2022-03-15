@@ -90,8 +90,8 @@ async function renderUsers() {
   users.forEach(user => {
       let htmlSegment = `<div class="user">
                           <img src="${user.profileURL}" width="235px" >
-                          <h2>${user.firstName} ${user.lastName}</h2>
-                          <div class="puntos">${user.puntos} puntos</div>
+                          <h2 class="text-white">${user.firstName} ${user.lastName}</h2>
+                          <div class="puntos text-white">${user.puntos} puntos</div>
                       </div>`;
 
       html += htmlSegment;
