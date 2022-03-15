@@ -213,6 +213,7 @@ function salir(){
         window.setTimeout(function() {
           window.location.href = '../index.html';
       }, 5000);
+    }
       else if (pagina == "top10.html"){
         localStorage.setItem('logged', 'no');
         domSalirTop10();
