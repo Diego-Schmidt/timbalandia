@@ -13,7 +13,7 @@
     "gender": "Mujer",
     "profileURL": "../assets/mujer.png",
     "puntos":"258000"
-}
+},
 {
     "username": "maria",
     "firstName": "Maria",
@@ -21,7 +21,7 @@
     "gender": "Mujer",
     "profileURL": "../assets/mujer.png",
     "puntos":"37000"
-}
+},
 {
     "username": "roberto",
     "firstName": "Roberto",
@@ -29,7 +29,7 @@
     "gender": "Hombre",
     "profileURL": "../assets/hombre.png",
     "puntos":"258000000"
-}
+},
 {
     "username": "pepe",
     "firstName": "Pedro",
@@ -37,7 +37,7 @@
     "gender": "hombre",
     "profileURL": "../assets/hombre.png",
     "puntos":"228000"
-}
+},
 {
     "username": "analia",
     "firstName": "Analia",
