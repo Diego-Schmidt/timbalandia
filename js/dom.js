@@ -68,6 +68,11 @@ function domIsLoggedLoteria(){
   document.getElementById("comprar8").innerHTML = `<button id="C8" type="button" class="w-100 btn btn-lg btn-primary" onclick="comprarNumero(8,800)">Comprar</button>`;
 }
 
+function domIsLoggedTop10(){
+    document.getElementById("ingresarsalir").innerHTML = `<button id="botonIngresar" type="button" class="btn btn-light text-dark me-2" onclick="salir()" >Salir</button>`;
+}
+
+
 function domLoggedIn(){
     document.getElementById("linkPanel").style.display = "block";
     document.getElementById("linkTop10").style.display = "block";

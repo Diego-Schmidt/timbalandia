@@ -177,7 +177,10 @@ if (pagina == "index.html" && estaLogeado == "yes"){
   } else if(pagina == "cuenta.html" && estaLogeado == "yes"){
    isLogged();
     
-    } 
+    } else if(pagina == "top10.html" && estaLogeado == "yes"){
+      isLogged();
+       
+       } 
 
 
 
