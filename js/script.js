@@ -91,13 +91,13 @@ async function renderUsers() {
       let htmlSegment = `<div class="user">
                           <img src="${user.profileURL}" >
                           <h2>${user.firstName} ${user.lastName}</h2>
-                          <div class="email"><a href="email:${user.email}">${user.email}</a></div>
+                          <div class="puntos"><a href="email:${user.puntos}">${user.puntos}</a></div>
                       </div>`;
 
       html += htmlSegment;
   });
 
-  let container = document.querySelector('.container');
+  let container = document.querySelector('.containertop10');
   container.innerHTML = html;
 }
 
