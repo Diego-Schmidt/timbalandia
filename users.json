@@ -3,7 +3,7 @@
     "firstName": "Pablo",
     "lastName": "Olivares",
     "gender": "Hombre",
-    "profileURL": "./assets/hombre.png",
+    "profileURL": "../assets/hombre.png",
     "puntos":"368000"
 },
 {
@@ -11,7 +11,7 @@
     "firstName": "Juana",
     "lastName": "Dama",
     "gender": "Mujer",
-    "profileURL": "./assets/mujer.png",
+    "profileURL": "../assets/mujer.png",
     "puntos":"258000"
 },
 {
@@ -19,7 +19,7 @@
     "firstName": "Maria",
     "lastName": "Juana",
     "gender": "Mujer",
-    "profileURL": "./assets/mujer.png",
+    "profileURL": "../assets/mujer.png",
     "puntos":"37000"
 },
 {
@@ -27,7 +27,7 @@
     "firstName": "Roberto",
     "lastName": "Monstruo",
     "gender": "Hombre",
-    "profileURL": "./assets/hombre.png",
+    "profileURL": "../assets/hombre.png",
     "puntos":"258000000"
 },
 {
@@ -35,7 +35,7 @@
     "firstName": "Pedro",
     "lastName": "Lepew",
     "gender": "hombre",
-    "profileURL": "./assets/hombre.png",
+    "profileURL": "../assets/hombre.png",
     "puntos":"228000"
 },
 {
@@ -43,7 +43,7 @@
     "firstName": "Analia",
     "lastName": "Mambrú",
     "gender": "Mujer",
-    "profileURL": "./assets/mujer.png",
+    "profileURL": "../assets/mujer.png",
     "puntos":"225000"
 }
 ]
