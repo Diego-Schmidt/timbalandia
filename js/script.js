@@ -106,25 +106,15 @@ async function getUsers() {
   }
 }
 
-// const swiper = new Swiper('.swiper', {
-//   speed: 400,
-//   spaceBetween: 100,
-// });
-const swiper = document.querySelector('.swiper').swiper;
 
-// Now you can use all slider methods like
-swiper.slideNext();
 
 async function renderUsers() {
   let users = await getUsers();
   let html = '';
   users.forEach(user => {
-      let htmlSegment = `<div class="swiper"><div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="${user.profileURL}" width="235px" ></div>
+      let htmlSegment = `<img src="${user.profileURL}" width="235px" ></div>
                           <h2 class="text-white">${user.firstName} ${user.lastName}</h2>
-                          <div class="puntos text-white">${user.puntos} puntos</div>
-                          <div class="swiper-button-prev"></div>
-                          <div class="swiper-button-next"></div></div></div>`;
+                          <div class="puntos text-white">${user.puntos} puntos</div>`;
 
       html += htmlSegment;
   });
