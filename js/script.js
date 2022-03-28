@@ -62,11 +62,11 @@ function store(){
       localStorage.setItem('CN', 0);
       localStorage.setItem('logged', 'yes');
       // alert('Su cuenta fue creada con éxito :)');
-      let audio = new Audio(`${ruta}/assets/registrado.mp3`);
+      let audio = new Audio(`https://diego-schmidt.github.io/assets/registrado.mp3`);
       audio.loop = false;
       audio.play(); 
       window.setTimeout(function() {
-        window.location.href = `${ruta}/index.html`;
+        window.location.href = `https://diego-schmidt.github.io/index.html`;
     }, 2000);
 
   }
@@ -142,7 +142,7 @@ function check(){
       // alert('Te identificaste exitosamente :).');
       localStorage.setItem('logged', 'yes');
       domLoggedIn();
-      let audio = new Audio(`${ruta}/assets/login.mp3`);
+      let audio = new Audio(`https://diego-schmidt.github.io/assets/login.mp3`);
       audio.loop = false;
       audio.play();
 	  // --- Sound may not play due browser security policies ---
@@ -201,16 +201,16 @@ function salir(){
   if(pagina == "index.html"){
     localStorage.setItem('logged', 'no');
     domSalirIndex();
-    let audio = new Audio(`${ruta}/assets/logoff.mp3`);
+    let audio = new Audio(`https://diego-schmidt.github.io/assets/logoff.mp3`);
     audio.loop = false;
     audio.play(); 
     window.setTimeout(function() {
-      window.location.href = `${ruta}/index.html`;
+      window.location.href = `https://diego-schmidt.github.io/index.html`;
   }, 5000);
       } else if (pagina == "loteria.html"){
         localStorage.setItem('logged', 'no');
         domSalirLoteria();
-        let audio = new Audio(`${ruta}/assets/logoff.mp3`);
+        let audio = new Audio(`https://diego-schmidt.github.io/assets/logoff.mp3`);
       audio.loop = false;
       audio.play(); 
       window.setTimeout(function() {
@@ -220,7 +220,7 @@ function salir(){
         else if (pagina == "cuenta.html"){
           localStorage.setItem('logged', 'no');
           domSalirCuenta();
-          let audio = new Audio(`${ruta}/assets/logoff.mp3`);
+          let audio = new Audio(`https://diego-schmidt.github.io/assets/logoff.mp3`);
         audio.loop = false;
         audio.play(); 
         window.setTimeout(function() {
@@ -230,7 +230,7 @@ function salir(){
       else if (pagina == "top10.html"){
         localStorage.setItem('logged', 'no');
         domSalirTop10();
-        let audio = new Audio(`${ruta}/assets/logoff.mp3`);
+        let audio = new Audio(`https://diego-schmidt.github.io/assets/logoff.mp3`);
       audio.loop = false;
       audio.play(); 
       window.setTimeout(function() {
@@ -241,7 +241,7 @@ function salir(){
           else if (pagina == "juegos.html"){
             localStorage.setItem('logged', 'no');
             domSalirJuegos();
-            let audio = new Audio(`${ruta}/assets/logoff.mp3`);
+            let audio = new Audio(`https://diego-schmidt.github.io/assets/logoff.mp3`);
           audio.loop = false;
           audio.play(); 
           window.setTimeout(function() {
@@ -279,7 +279,7 @@ function comprar(b){
   let currentTc = +localStorage.getItem('TC');
   let compra = currentTc + b;
   localStorage.setItem('TC', `${compra}`);
-  let audio = new Audio(`${ruta}/assets/comprartc.mp3`);
+  let audio = new Audio(`https://diego-schmidt.github.io/assets/comprartc.mp3`);
     audio.loop = false;
     audio.play(); 
   document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="./assets/billetera.png" width="20px" /> ${compra} TC <img src="./assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
@@ -299,24 +299,24 @@ function comprarNumero(a,b){
   switch(true) {
     case (b == 400):
       toastyNotify(`Compraste ${a} Lotis`);
-      sonido = new Audio(`${ruta}/assets/compra4numeros.mp3`);
+      sonido = new Audio(`https://diego-schmidt.github.io/assets/compra4numeros.mp3`);
       sonido.loop = false;
       sonido.play(); 
       break;
     case (b == 800):
       toastyNotify(`Compraste ${a} Lotis`);
-      sonido = new Audio(`${ruta}/assets/compra8numeros.mp3`);
+      sonido = new Audio(`https://diego-schmidt.github.io/assets/compra8numeros.mp3`);
       sonido.loop = false;
       sonido.play()
       break;
     default:
     toastyNotify(`Compraste ${a} Lotis`);
-    sonido = new Audio(`${ruta}/assets/compra1numero.mp3`);
+    sonido = new Audio(`https://diego-schmidt.github.io/assets/compra1numero.mp3`);
     sonido.loop = false;
     sonido.play(); 
   } 
   
-  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="${ruta}/assets/billetera.png" width="20px" /> ${compra} TC <img src="${ruta}/assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
+  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="https://diego-schmidt.github.io/assets/billetera.png" width="20px" /> ${compra} TC <img src="https://diego-schmidt.github.io/assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
   // alert(`Gracias por comprar ${b} TimbaCoins :D , ahora tienes ${compra} TimbaCoins`);
   // console.log(compra);
   // console.log(currentTc);
@@ -332,7 +332,7 @@ function comprarNumero(a,b){
 
 
 function nope(){
-  let audio = new Audio(`${ruta}/assets/wrong.mp3`);
+  let audio = new Audio(`https://diego-schmidt.github.io/assets/wrong.mp3`);
       audio.loop = false;
       audio.play(); 
       window.setTimeout(function() {
@@ -353,7 +353,7 @@ var submit_form=document.getElementById("login_btn");
 // Togle Botón login
 
 function abrirLogin() {
-  let audio = new Audio(`${ruta}/assets/pop.mp3`);
+  let audio = new Audio(`https://diego-schmidt.github.io/assets/pop.mp3`);
     audio.loop = false;
     audio.play(); 
   document.getElementById("miLogin").style.display = "block";
@@ -366,7 +366,7 @@ function cerrarLogin() {
   // document.getElementById("miLogin").classList.remove('swirl-in-fwd');
   // document.getElementById("miLogin").classList.add('swirl-out-bck');
   // document.getElementById("miLogin").classList.toggle("d-none");
-  let audio = new Audio(`${ruta}/assets/popout.mp3`);
+  let audio = new Audio(`https://diego-schmidt.github.io/assets/popout.mp3`);
   audio.loop = false;
   audio.play(); 
   document.getElementById("miLogin").style.display = "none";
@@ -375,7 +375,7 @@ function cerrarLogin() {
 // Togle Botón registrarse 
 
 function abrirRegistro() {
-  let audio = new Audio(`${ruta}/assets/pop.mp3`);
+  let audio = new Audio(`https://diego-schmidt.github.io/assets/pop.mp3`);
     audio.loop = false;
     audio.play(); 
   document.getElementById("miRegistro").style.display = "block";
@@ -385,7 +385,7 @@ function abrirRegistro() {
 }
 
 function cerrarRegistro() {
-  let audio = new Audio(`${ruta}/assets/popout.mp3`);
+  let audio = new Audio(`https://diego-schmidt.github.io/assets/popout.mp3`);
   audio.loop = false;
   audio.play(); 
   document.getElementById("miRegistro").style.display = "none";
