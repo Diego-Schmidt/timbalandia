@@ -339,7 +339,7 @@ const Slot = function(canvas){
 	};
 
 function notEnougTC(){
-    let audio = new Audio(`${ruta}/assets/wrong.mp3`);
+    let audio = new Audio(`https://diego-schmidt.github.io/assets/wrong.mp3`);
       audio.loop = false;
       audio.play(); 
     Swal.fire({
