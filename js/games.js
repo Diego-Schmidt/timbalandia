@@ -370,7 +370,7 @@ function notEnougTC(){
 			reel.finalShapes = reel.setFinalShapes();
 			currentSpin.push(reel.finalShapes);
             localStorage.setItem('TC', conf.balance.value);
-            document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="../assets/billetera.png" width="20px" /> ${conf.balance.value} TC <img src="../assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
+            document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="https://diego-schmidt.github.io/timbalandia/assets/billetera.png" width="20px" /> ${conf.balance.value} TC <img src="https://diego-schmidt.github.io/timbalandia/assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
             
 		});
 		conf.spinBtn.setAttribute('disabled', 'disabled');
@@ -592,17 +592,17 @@ let conf = {
 	imgDot: null,
 	autoModeDelay: 3000,
 	sound: {
-		win: new Audio('../assets/win.mp3'),
-		spin: new Audio('../assets/spin.mp3')
+		win: new Audio('https://diego-schmidt.github.io/timbalandia/assets/win.mp3'),
+		spin: new Audio('https://diego-schmidt.github.io/timbalandia/assets/spin.mp3')
 	}
 };
 //Resource loader
 Resources(
-		'../assets//BAR.png', 
-		'../assets/2xBAR.png', 
-		'../assets/3xBAR.png', 
-		'../assets/7.png',
-		'../assets/Cherry.png'
+		'https://diego-schmidt.github.io/timbalandia/assets//BAR.png', 
+		'https://diego-schmidt.github.io/timbalandia/assets/2xBAR.png', 
+		'https://diego-schmidt.github.io/timbalandia/assets/3xBAR.png', 
+		'https://diego-schmidt.github.io/timbalandia/assets/7.png',
+		'https://diego-schmidt.github.io/timbalandia/assets/Cherry.png'
 	)
 	.onLoad(function(resources, names){
   document.querySelector('.preview').parentNode.
@@ -614,7 +614,7 @@ Resources(
 		}
 		//add options to select
 		names.forEach(function(name){
-			let key = name.replace(new RegExp('^(../assets/)|(.png|.jpg|.jpeg)$','ig'), ''),
+			let key = name.replace(new RegExp('^(https://diego-schmidt.github.io/timbalandia/assets/)|(.png|.jpg|.jpeg)$','ig'), ''),
 				option = document.createElement('option');
 				option.value = key;
 				option.innerText = key;
