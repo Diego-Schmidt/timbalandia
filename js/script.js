@@ -282,7 +282,7 @@ function comprar(b){
   let audio = new Audio(`https://diego-schmidt.github.io/assets/comprartc.mp3`);
     audio.loop = false;
     audio.play(); 
-  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="./assets/billetera.png" width="20px" /> ${compra} TC <img src="./assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
+  document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="https://diego-schmidt.github.io/assets/billetera.png" width="20px" /> ${compra} TC <img src="https://diego-schmidt.github.io/assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
   // alert(`Gracias por comprar ${b} TimbaCoins :D , ahora tienes ${compra} TimbaCoins`);
   toastyNotify(`Compraste ${b} TC`);
   console.log(compra);
@@ -302,21 +302,21 @@ function comprarNumero(a,b){
       sonido = new Audio(`https://diego-schmidt.github.io/assets/compra4numeros.mp3`);
       sonido.loop = false;
       sonido.play(); 
-      document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="./assets/billetera.png" width="20px" /> ${currentTc} TC <img src="./assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
+      document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="https://diego-schmidt.github.io/assets/billetera.png" width="20px" /> ${currentTc} TC <img src="https://diego-schmidt.github.io/assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
       break;
     case (b == 800):
       toastyNotify(`Compraste ${a} Lotis`);
       sonido = new Audio(`https://diego-schmidt.github.io/assets/compra8numeros.mp3`);
       sonido.loop = false;
       sonido.play()
-      document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="./assets/billetera.png" width="20px" /> ${currentTc} TC <img src="./assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
+      document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="https://diego-schmidt.github.io/assets/billetera.png" width="20px" /> ${currentTc} TC <img src="https://diego-schmidt.github.io/assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
       break;
     default:
     toastyNotify(`Compraste ${a} Lotis`);
     sonido = new Audio(`https://diego-schmidt.github.io/assets/compra1numero.mp3`);
     sonido.loop = false;
     sonido.play(); 
-    document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="./assets/billetera.png" width="20px" /> ${currentTc} TC <img src="./assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
+    document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="https://diego-schmidt.github.io/assets/billetera.png" width="20px" /> ${currentTc} TC <img src="https://diego-schmidt.github.io/assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
   } 
   
   document.getElementById("saludo").innerHTML = `<h6 class="text-default text-center border border-3 border-success rounded">Saludos ${nombreLog}! <img src="https://diego-schmidt.github.io/assets/billetera.png" width="20px" /> ${currentTc} TC <img src="https://diego-schmidt.github.io/assets/tc.gif" width="20px"/>Tienes ${cantidadNumerosLoteria} Lotis</h6>`;
